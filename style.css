@@ -95,7 +95,7 @@ nav {
     color: #fff;
 }
 
-/* Proyek Grid */
+/* Plugin Grid */
 .grid {
     display: grid;
     gap: 1.5rem;
@@ -131,14 +131,6 @@ nav {
 
 .card .btn:hover {
     background: #005fa3;
-}
-
-/* Kontak */
-.profile {
-    max-width: 150px;
-    border-radius: 50%;
-    display: block;
-    margin: 1rem auto;
 }
 
 /* Footer */
