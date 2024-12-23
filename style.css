@@ -270,3 +270,64 @@ p {
 footer {
     margin-top: 3rem;
 }
+
+/* Gaya dasar untuk Tab Pojok Atas */
+.top-tabs {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #007acc;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    z-index: 9999;
+}
+
+.tabs {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    margin: 0;
+}
+
+.tabs li {
+    margin: 10px 0;
+}
+
+.tabs a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 10px;
+    display: block;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.tabs a:hover {
+    background-color: #005fa3;
+}
+
+/* Responsivitas Tab */
+@media (max-width: 768px) {
+    .top-tabs {
+        top: 10px;
+        right: 10px;
+        width: 50px;
+    }
+
+    .tabs {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .tabs li {
+        margin: 0 5px;
+    }
+
+    .tabs a {
+        font-size: 1rem;
+        padding: 8px;
+    }
+}
