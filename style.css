@@ -14,6 +14,10 @@ body {
 /* Navbar */
 .navbar {
     border-bottom: 2px solid #fff;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10;
 }
 
 .navbar-brand {
@@ -30,10 +34,12 @@ body {
 .hero {
     background: url('img/background.jpeg') no-repeat center center/cover;
     color: #fff;
-    padding: 120px 0 50px 0;
+    padding-top: 120px;
+    padding-bottom: 50px;
     text-align: center;
 }
 
+/* Hero text */
 .hero h1 {
     font-size: 3rem;
     font-weight: 600;
@@ -136,8 +142,14 @@ footer p {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+    /* Navbar */
     .navbar-nav {
         text-align: center;
+    }
+
+    /* Hero Section */
+    .hero {
+        padding-top: 140px; /* Menyesuaikan padding untuk ponsel */
     }
 
     .hero h1 {
@@ -148,6 +160,7 @@ footer p {
         font-size: 1rem;
     }
 
+    /* Card untuk plugin */
     .card {
         margin-bottom: 20px;
     }
@@ -166,5 +179,10 @@ footer p {
 
     .card-text {
         font-size: 0.9rem;
+    }
+
+    /* Contact Section */
+    #contact p {
+        font-size: 1rem;
     }
 }
