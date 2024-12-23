@@ -4,54 +4,101 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VsrStudio - Pengembang Minecraft</title>
+    <!-- Link ke Bootstrap untuk desain responsif -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
 </head>
 <body>
-    <header class="hero">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
         <div class="container">
-            <img src="img/logo.png" alt="Logo VsrStudio" class="logo">
-            <h1>VsrStudio</h1>
-            <p>Mengembangkan Plugin PocketMine dan Model Minecraft dengan Kreativitas</p>
-            <a href="plugin.html" class="btn">Lihat Plugin PocketMine</a>
+            <a class="navbar-brand" href="#">VsrStudio</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#plugin">Plugin</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">Tentang</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Kontak</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header id="home" class="hero bg-primary text-white text-center py-5">
+        <div class="container">
+            <h1 class="display-4">Selamat datang di VsrStudio</h1>
+            <p class="lead">Pengembang plugin dan model Minecraft untuk komunitas server</p>
+            <a href="#plugin" class="btn btn-light btn-lg">Lihat Plugin</a>
         </div>
     </header>
-    
-    <!-- Tab Navigation di Pojok Atas -->
-    <div class="top-tabs">
-        <ul class="tabs">
-            <li><a href="#home">Home</a></li>
-            <li><a href="plugin.html">Plugin</a></li>
-            <li><a href="#kontak">Kontak</a></li>
-        </ul>
-    </div>
 
-    <nav>
-        <ul class="nav-links">
-            <li><a href="#tentang">Tentang</a></li>
-            <li><a href="plugin.html">Plugin PocketMine</a></li>
-            <li><a href="#kontak">Kontak</a></li>
-        </ul>
-    </nav>
-    <main>
-        <!-- Konten halaman lainnya -->
-        <section id="tentang" class="section">
-            <div class="container">
-                <h2>Tentang Saya</h2>
-                <p>Saya VsrStudio, seorang pengembang yang berfokus pada pembuatan plugin PocketMine-MP dan model Minecraft yang mendukung komunitas server Minecraft.</p>
-                <img src="img/profile.jpg" alt="Foto VsrStudio" class="profile">
+    <!-- Plugin Section -->
+    <section id="plugin" class="container my-5">
+        <h2 class="text-center mb-4">Plugin PocketMine</h2>
+        <div class="row g-4">
+            <!-- Card Plugin -->
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="img/plugin1.jpg" class="card-img-top" alt="Plugin 1">
+                    <div class="card-body">
+                        <h5 class="card-title">Plugin 1</h5>
+                        <p class="card-text">Deskripsi singkat tentang plugin pertama.</p>
+                        <a href="https://github.com/VsrStudio/plugin1" class="btn btn-primary">Lihat di GitHub</a>
+                    </div>
+                </div>
             </div>
-        </section>
-        <section id="kontak" class="section">
-            <div class="container">
-                <h2>Kontak Saya</h2>
-                <p>Email: <a href="mailto:vsrstudio@example.com">vsrstudio@example.com</a></p>
-                <p>GitHub: <a href="https://github.com/VsrStudio">VsrStudio</a></p>
+            <!-- Card Plugin -->
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="img/plugin2.jpg" class="card-img-top" alt="Plugin 2">
+                    <div class="card-body">
+                        <h5 class="card-title">Plugin 2</h5>
+                        <p class="card-text">Deskripsi singkat tentang plugin kedua.</p>
+                        <a href="https://github.com/VsrStudio/plugin2" class="btn btn-primary">Lihat di GitHub</a>
+                    </div>
+                </div>
             </div>
-        </section>
-    </main>
-    <footer>
+            <!-- Card Plugin -->
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="img/plugin3.jpg" class="card-img-top" alt="Plugin 3">
+                    <div class="card-body">
+                        <h5 class="card-title">Plugin 3</h5>
+                        <p class="card-text">Deskripsi singkat tentang plugin ketiga.</p>
+                        <a href="https://github.com/VsrStudio/plugin3" class="btn btn-primary">Lihat di GitHub</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tentang Section -->
+    <section id="about" class="bg-light py-5">
+        <div class="container">
+            <h2 class="text-center mb-4">Tentang Saya</h2>
+            <p>Saya VsrStudio, seorang pengembang plugin dan model Minecraft yang berfokus pada pembuatan plugin PocketMine dan model 3D untuk Minecraft.</p>
+            <img src="img/profile.jpg" alt="VsrStudio" class="img-fluid rounded-circle mx-auto d-block" style="width: 200px;">
+        </div>
+    </section>
+
+    <!-- Kontak Section -->
+    <section id="contact" class="container my-5">
+        <h2 class="text-center mb-4">Kontak Saya</h2>
+        <p>Email: <a href="mailto:vsrstudio@example.com">vsrstudio@example.com</a></p>
+        <p>GitHub: <a href="https://github.com/VsrStudio">VsrStudio</a></p>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center py-3">
         <p>&copy; 2024 VsrStudio. Dibuat dengan ❤️ untuk komunitas Minecraft.</p>
     </footer>
+
+    <!-- Bootstrap JS dan dependensi -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
 </body>
 </html>
