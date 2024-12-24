@@ -1,4 +1,4 @@
-/* Global Styles */
+/* General Styles */
 * {
     margin: 0;
     padding: 0;
@@ -7,164 +7,155 @@
 
 body {
     font-family: 'Arial', sans-serif;
-    background: linear-gradient(to bottom, #f5f7fa, #c3cfe2);
+    background-color: #f4f7f9;
     color: #333;
 }
 
-/* Navbar */
-.navbar {
-    background: rgba(0, 0, 0, 0.8);
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+h1, h2 {
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+}
+
+section {
+    padding: 60px 0;
+}
+
+.btn {
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: #0066ff;
     color: #fff;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1000;
-    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #0044cc;
+}
+
+.navbar {
+    background-color: #333;
+    padding: 20px 0;
+}
+
+.navbar .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
-}
-
-.navbar-brand {
-    font-size: 1.5rem;
-    font-weight: bold;
 }
 
 .navbar-nav {
     list-style: none;
     display: flex;
-    gap: 20px;
 }
 
-.nav-link {
+.navbar-nav li {
+    margin-right: 20px;
+}
+
+.navbar-nav .nav-link {
     color: #fff;
-    text-decoration: none;
-    font-size: 1rem;
+    font-size: 18px;
+    font-weight: bold;
+    transition: color 0.3s ease;
 }
 
-.nav-link:hover {
-    color: #00aaff;
+.navbar-nav .nav-link:hover {
+    color: #ff6347;
 }
 
 /* Hero Section */
 .hero {
-    height: 100vh;
-    background: url('img/background.jpeg') no-repeat center center/cover;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+    background-color: #0066ff;
     color: #fff;
+    text-align: center;
+    padding: 100px 0;
+    background-image: url('img/background.jpeg');
+    background-size: cover;
+    background-position: center;
 }
 
 .hero h1 {
-    font-size: 3rem;
+    font-size: 50px;
     margin-bottom: 20px;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
 }
 
 .hero p {
-    font-size: 1.2rem;
+    font-size: 20px;
     margin-bottom: 30px;
 }
 
-.btn-hero {
-    background: #00aaff;
-    padding: 10px 20px;
-    font-size: 1.2rem;
-    color: #fff;
-    border-radius: 5px;
-    text-decoration: none;
-    transition: background 0.3s ease;
-}
-
-.btn-hero:hover {
-    background: #0077cc;
-}
-
-/* Plugins Section */
+/* Plugin Cards Section */
 .plugins {
-    padding: 50px 0;
-}
-
-.section-title {
-    font-size: 2.5rem;
+    background-color: #fff;
     text-align: center;
-    margin-bottom: 30px;
-}
-
-.plugin-cards {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
 }
 
 .plugin-card {
-    background: #fff;
+    background-color: #f9f9f9;
+    padding: 20px;
+    margin: 20px;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 280px;
-    transition: transform 0.3s ease;
-}
-
-.plugin-card:hover {
-    transform: scale(1.05);
-}
-
-.plugin-card-img {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-    border-radius: 10px 10px 0 0;
-}
-
-.plugin-card-body {
-    padding: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     text-align: center;
 }
 
-.plugin-card-title {
-    font-size: 1.5rem;
+.plugin-card h3 {
+    font-size: 24px;
     margin-bottom: 10px;
 }
 
-.plugin-card-description {
-    font-size: 1rem;
-    color: #555;
-    margin-bottom: 20px;
+.plugin-card p {
+    font-size: 16px;
+    color: #666;
 }
 
-.btn-plugin {
-    background: #00aaff;
-    color: #fff;
-    text-decoration: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    transition: background 0.3s ease;
+.section-title {
+    font-size: 36px;
+    margin-bottom: 40px;
+    color: #333;
 }
 
-.btn-plugin:hover {
-    background: #0077cc;
+/* Contact Section */
+.contact {
+    background-color: #fff;
+    text-align: center;
 }
 
-/* Footer */
 footer {
-    background: #333;
+    background-color: #333;
     color: #fff;
     text-align: center;
-    padding: 10px 0;
+    padding: 20px 0;
+    margin-top: 40px;
 }
 
-/* Responsive */
+footer p {
+    font-size: 14px;
+}
+
+/* Mobile Responsive */
 @media (max-width: 768px) {
-    .hero h1 {
-        font-size: 2.5rem;
+    .navbar-nav {
+        flex-direction: column;
+        gap: 10px;
     }
 
-    .plugin-cards {
-        flex-direction: column;
-        align-items: center;
+    .hero h1 {
+        font-size: 36px;
+    }
+
+    .hero p {
+        font-size: 18px;
     }
 }
