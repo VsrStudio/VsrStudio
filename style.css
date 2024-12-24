@@ -226,9 +226,9 @@ footer p {
 
 /* Plugin Logo Styling */
 .plugin-logo {
-    width: 60px;   /* Menyesuaikan ukuran logo, bisa diubah sesuai kebutuhan */
+    width: 80px;   /* Menyesuaikan ukuran logo, bisa diubah sesuai kebutuhan */
     height: auto;  /* Memastikan aspek rasio gambar tetap terjaga */
-    margin-bottom: 15px;  /* Spasi antara logo dan nama plugin */
+    margin-bottom: 20px;  /* Spasi antara logo dan nama plugin */
     display: block;
     margin-left: auto;
     margin-right: auto;
