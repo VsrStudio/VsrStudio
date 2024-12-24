@@ -221,3 +221,68 @@ footer p {
         grid-template-columns: 1fr;
     }
 }
+
+/* Add this to the existing style.css */
+
+/* Plugin Logos */
+.plugin-logo {
+    width: 50px; /* Adjust the width of the plugin logo */
+    height: 50px; /* Ensure the height is consistent */
+    margin-right: 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Plugin Item Styling */
+.plugin-item {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.plugin-item:hover {
+    transform: scale(1.05);
+}
+
+.plugin-item h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.plugin-item p {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.plugin-item .btn-download {
+    background-color: #ff5722;
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 18px;
+    transition: background-color 0.3s;
+}
+
+.plugin-item .btn-download:hover {
+    background-color: #e64a19;
+}
+
+/* Add this part for search input */
+.search .search-input {
+    width: 60%;
+    padding: 12px;
+    font-size: 18px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-bottom: 30px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
