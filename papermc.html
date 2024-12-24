@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VsrStudio - Plugin PaperMC</title>
+    <title>Plugin PaperMC</title>
     <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
 </head>
 <body>
     <!-- Navbar -->
@@ -20,32 +21,48 @@
         </div>
     </nav>
 
-    <!-- Search Form -->
-    <section class="search">
+    <!-- Search Section -->
+    <section id="search" class="search">
         <div class="container">
-            <h2>Search PaperMC Plugins</h2>
-            <form action="#" method="GET">
-                <input type="text" name="search" placeholder="Search Plugin..." id="search-input" />
-                <button type="submit" id="search-btn">Search</button>
-            </form>
-        </div>
-    </section>
-
-    <!-- PaperMC Plugins Section -->
-    <section class="plugins">
-        <div class="container">
-            <h2 class="section-title">PaperMC Plugins</h2>
-            <!-- Plugin 1 -->
-            <div class="plugin-card">
-                <h3>Example Plugin 1</h3>
-                <p>Description of the PaperMC Plugin 1.</p>
-                <a href="#" class="btn-download">Download</a>
-            </div>
-            <!-- Plugin 2 -->
-            <div class="plugin-card">
-                <h3>Example Plugin 2</h3>
-                <p>Description of the PaperMC Plugin 2.</p>
-                <a href="#" class="btn-download">Download</a>
+            <h2 class="section-title">Search PaperMC Plugins</h2>
+            <input type="text" id="searchInput" onkeyup="searchPlugin()" placeholder="Search for plugins..." class="search-input">
+            <div id="pluginList">
+                <!-- Example Plugin 1 -->
+                <div class="plugin-item" data-name="PluginOne">
+                    <h3>PluginOne</h3>
+                    <p>PluginOne is an essential tool for optimizing PaperMC server performance.</p>
+                    <a href="downloads/PluginOne.zip" class="btn btn-download" download>Download</a>
+                </div>
+                <!-- Example Plugin 2 -->
+                <div class="plugin-item" data-name="PluginTwo">
+                    <h3>PluginTwo</h3>
+                    <p>PluginTwo offers unique features for managing world settings in PaperMC.</p>
+                    <a href="downloads/PluginTwo.zip" class="btn btn-download" download>Download</a>
+                </div>
+                <!-- Example Plugin 3 -->
+                <div class="plugin-item" data-name="PluginThree">
+                    <h3>PluginThree</h3>
+                    <p>PluginThree adds new gameplay mechanics and challenges for players.</p>
+                    <a href="downloads/PluginThree.zip" class="btn btn-download" download>Download</a>
+                </div>
+                <!-- Example Plugin 4 -->
+                <div class="plugin-item" data-name="PluginFour">
+                    <h3>PluginFour</h3>
+                    <p>PluginFour provides enhanced admin commands and server management tools.</p>
+                    <a href="downloads/PluginFour.zip" class="btn btn-download" download>Download</a>
+                </div>
+                <!-- Example Plugin 5 -->
+                <div class="plugin-item" data-name="PluginFive">
+                    <h3>PluginFive</h3>
+                    <p>PluginFive integrates a custom economy system into PaperMC servers.</p>
+                    <a href="downloads/PluginFive.zip" class="btn btn-download" download>Download</a>
+                </div>
+                <!-- Example Plugin 6 -->
+                <div class="plugin-item" data-name="PluginSix">
+                    <h3>PluginSix</h3>
+                    <p>PluginSix is a utility plugin for managing server events and custom actions.</p>
+                    <a href="downloads/PluginSix.zip" class="btn btn-download" download>Download</a>
+                </div>
             </div>
         </div>
     </section>
@@ -56,5 +73,23 @@
             <p>&copy; 2024 VsrStudio. All Rights Reserved.</p>
         </div>
     </footer>
+
+    <script>
+        function searchPlugin() {
+            const input = document.getElementById("searchInput");
+            const filter = input.value.toLowerCase();
+            const plugins = document.getElementById("pluginList").getElementsByClassName("plugin-item");
+
+            for (let i = 0; i < plugins.length; i++) {
+                const plugin = plugins[i];
+                const name = plugin.getAttribute("data-name").toLowerCase();
+                if (name.includes(filter)) {
+                    plugin.style.display = "";
+                } else {
+                    plugin.style.display = "none";
+                }
+            }
+        }
+    </script>
 </body>
 </html>
