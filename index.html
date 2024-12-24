@@ -1,137 +1,113 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VsrStudio - Pengembang Minecraft</title>
-    <!-- Link ke Bootstrap untuk desain responsif -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>VsrStudio Plugins</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+    <nav class="navbar">
         <div class="container">
-            <a class="navbar-brand" href="#">VsrStudio</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#plugin">Plugin</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#about">Tentang</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contact">Kontak</a></li>
-                </ul>
-            </div>
+            <div class="navbar-brand">VsrStudio</div>
+            <ul class="navbar-nav">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#plugins" class="nav-link">Plugins</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <header id="home" class="hero bg-primary text-white text-center py-5">
-        <div class="container">
-            <h1 class="display-4">Selamat datang di VsrStudio</h1>
-            <p class="lead">Pengembang plugin dan model Minecraft untuk komunitas server</p>
-            <a href="#plugin" class="btn btn-light btn-lg">Lihat Plugin</a>
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Welcome to VsrStudio</h1>
+            <p>Explore and download our amazing PocketMine-MP plugins!</p>
+            <a href="#plugins" class="btn">Discover Plugins</a>
         </div>
-    </header>
+    </section>
 
-    <!-- Plugin Section -->
-    <section id="plugin" class="container my-5">
-        <h2 class="text-center mb-4">Plugin PocketMine</h2>
-        <div class="row g-4">
-            <!-- Card Plugin VPNetwork -->
-            <div class="col-md-4">
-                <div class="card">
-                    <img src="img/vpnetwork.jpg" class="card-img-top" alt="VPNetwork">
-                    <div class="card-body">
-                        <h5 class="card-title">VPNetwork</h5>
-                        <p class="card-text">Plugin untuk mengelola jaringan server Minecraft Anda dengan mudah.</p>
-                        <a href="https://github.com/VsrStudio/VPNetwork" class="btn btn-primary">Lihat di GitHub</a>
+    <!-- Plugins Section -->
+    <section id="plugins">
+        <div class="container">
+            <h2 class="section-title">Our Plugins</h2>
+            <div class="plugin-cards">
+                <div class="plugin-card">
+                    <img src="img/vpnetwork.jpg" alt="VPNetwork" class="plugin-card-img">
+                    <div class="plugin-card-body">
+                        <h3 class="plugin-card-title">VPNetwork</h3>
+                        <p class="plugin-card-description">Manage server networks with ease and efficiency.</p>
+                        <a href="#" class="btn-plugin">View Details</a>
                     </div>
                 </div>
-            </div>
-            <!-- Card Plugin MusicUI -->
-            <div class="col-md-4">
-                <div class="card">
-                    <img src="img/musicui.jpg" class="card-img-top" alt="MusicUI">
-                    <div class="card-body">
-                        <h5 class="card-title">MusicUI</h5>
-                        <p class="card-text">Plugin UI untuk memutar musik dalam game dengan kontrol yang mudah.</p>
-                        <a href="https://github.com/VsrStudio/MusicUI" class="btn btn-primary">Lihat di GitHub</a>
+                <div class="plugin-card">
+                    <img src="img/musicui.jpg" alt="MusicUI" class="plugin-card-img">
+                    <div class="plugin-card-body">
+                        <h3 class="plugin-card-title">MusicUI</h3>
+                        <p class="plugin-card-description">Add interactive music interfaces to your server.</p>
+                        <a href="#" class="btn-plugin">View Details</a>
                     </div>
                 </div>
-            </div>
-            <!-- Card Plugin PerWorldRegister -->
-            <div class="col-md-4">
-                <div class="card">
-                    <img src="img/perworldregister.jpg" class="card-img-top" alt="PerWorldRegister">
-                    <div class="card-body">
-                        <h5 class="card-title">PerWorldRegister</h5>
-                        <p class="card-text">Plugin untuk mendaftarkan pengguna per dunia dalam server Minecraft.</p>
-                        <a href="https://github.com/VsrStudio/PerWorldRegister" class="btn btn-primary">Lihat di GitHub</a>
+                <div class="plugin-card">
+                    <img src="img/perworldregister.jpg" alt="PerWorldRegister" class="plugin-card-img">
+                    <div class="plugin-card-body">
+                        <h3 class="plugin-card-title">PerWorldRegister</h3>
+                        <p class="plugin-card-description">Efficiently manage world registrations on your server.</p>
+                        <a href="#" class="btn-plugin">View Details</a>
                     </div>
                 </div>
-            </div>
-            <!-- Card Plugin SurvivalGame -->
-            <div class="col-md-4">
-                <div class="card">
-                    <img src="img/survivalgame.jpg" class="card-img-top" alt="SurvivalGame">
-                    <div class="card-body">
-                        <h5 class="card-title">SurvivalGame</h5>
-                        <p class="card-text">Plugin untuk membuat arena permainan survival di server Minecraft.</p>
-                        <a href="https://github.com/VsrStudio/SurvivalGame" class="btn btn-primary">Lihat di GitHub</a>
+                <div class="plugin-card">
+                    <img src="img/survivalgame.jpg" alt="SurvivalGame" class="plugin-card-img">
+                    <div class="plugin-card-body">
+                        <h3 class="plugin-card-title">SurvivalGame</h3>
+                        <p class="plugin-card-description">Host and manage exciting survival games on your server.</p>
+                        <a href="#" class="btn-plugin">View Details</a>
                     </div>
                 </div>
-            </div>
-            <!-- Card Plugin Teleportdelay -->
-            <div class="col-md-4">
-                <div class="card">
-                    <img src="img/teleportdelay.jpg" class="card-img-top" alt="Teleportdelay">
-                    <div class="card-body">
-                        <h5 class="card-title">Teleportdelay</h5>
-                        <p class="card-text">Plugin untuk menambahkan delay pada teleportasi antar pemain.</p>
-                        <a href="https://github.com/VsrStudio/Teleportdelay" class="btn btn-primary">Lihat di GitHub</a>
+                <div class="plugin-card">
+                    <img src="img/teleportdelay.jpg" alt="TeleportDelay" class="plugin-card-img">
+                    <div class="plugin-card-body">
+                        <h3 class="plugin-card-title">TeleportDelay</h3>
+                        <p class="plugin-card-description">Add teleport delay functionality to enhance gameplay.</p>
+                        <a href="#" class="btn-plugin">View Details</a>
                     </div>
                 </div>
-            </div>
-            <!-- Card Plugin TopupRank -->
-            <div class="col-md-4">
-                <div class="card">
-                    <img src="img/topuprank.jpg" class="card-img-top" alt="TopupRank">
-                    <div class="card-body">
-                        <h5 class="card-title">TopupRank</h5>
-                        <p class="card-text">Plugin untuk sistem top-up dan peningkatan rank di server Minecraft.</p>
-                        <a href="https://github.com/VsrStudio/TopupRank" class="btn btn-primary">Lihat di GitHub</a>
+                <div class="plugin-card">
+                    <img src="img/topuprank.jpg" alt="TopupRank" class="plugin-card-img">
+                    <div class="plugin-card-body">
+                        <h3 class="plugin-card-title">TopupRank</h3>
+                        <p class="plugin-card-description">Easily top up and manage ranks for players.</p>
+                        <a href="#" class="btn-plugin">View Details</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Tentang Section -->
-    <section id="about" class="bg-light py-5">
+    <!-- About Section -->
+    <section id="about">
         <div class="container">
-            <h2 class="text-center mb-4">Tentang Saya</h2>
-            <p>Saya VsrStudio, seorang pengembang plugin dan model Minecraft yang berfokus pada pembuatan plugin PocketMine dan model 3D untuk Minecraft.</p>
-            <img src="img/profile.jpg" alt="VsrStudio" class="img-fluid rounded-circle mx-auto d-block" style="width: 200px;">
+            <h2 class="section-title">About VsrStudio</h2>
+            <p>VsrStudio is dedicated to developing high-quality plugins for PocketMine-MP servers, enhancing gameplay and user experience.</p>
         </div>
     </section>
 
-    <!-- Kontak Section -->
-    <section id="contact" class="container my-5">
-        <h2 class="text-center mb-4">Kontak Saya</h2>
-        <p>Email: <a href="mailto:vsrstudio@example.com">vsrstudio@example.com</a></p>
-        <p>GitHub: <a href="https://github.com/VsrStudio">VsrStudio</a></p>
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <h2 class="section-title">Contact Us</h2>
+            <p>Email: support@vsrstudio.com</p>
+            <p>GitHub: <a href="https://github.com/VsrStudio" target="_blank">VsrStudio</a></p>
+        </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-dark text-white text-center py-3">
-        <p>&copy; 2024 VsrStudio. Dibuat dengan ❤️ untuk komunitas Minecraft.</p>
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 VsrStudio. All Rights Reserved.</p>
+        </div>
     </footer>
-
-    <!-- Bootstrap JS dan dependensi -->
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
 </body>
 </html>
