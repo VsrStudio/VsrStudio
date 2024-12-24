@@ -11,11 +11,12 @@
     <nav class="navbar">
         <div class="container">
             <div class="navbar-brand">VsrStudio</div>
-            <ul class="navbar-nav">
+            <button class="navbar-toggle" onclick="toggleNavbar()">☰</button>
+            <ul class="navbar-nav" id="navbar-nav">
                 <li><a href="index.html" class="nav-link">Home</a></li>
                 <li><a href="pocketmine.html" class="nav-link">PocketMine</a></li>
                 <li><a href="papermc.html" class="nav-link">PaperMC</a></li>
-                <li><a href="#contact" class="nav-link">Contact</a></li>
+                <li><a href="maps.html" class="nav-link">Maps</a></li>
             </ul>
         </div>
     </nav>
@@ -66,20 +67,19 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <h2 class="section-title">Contact Us</h2>
-            <p>Email: <a href="mailto:support@vsrstudio.com">support@vsrstudio.com</a></p>
-            <p>GitHub: <a href="https://github.com/VsrStudio" target="_blank">VsrStudio</a></p>
-        </div>
-    </section>
-
     <!-- Footer -->
     <footer>
         <div class="container">
             <p>&copy; 2024 VsrStudio. All Rights Reserved.</p>
         </div>
     </footer>
+
+    <script>
+        // Script untuk toggle navbar
+        function toggleNavbar() {
+            const nav = document.getElementById("navbar-nav");
+            nav.classList.toggle("active");
+        }
+    </script>
 </body>
 </html>
