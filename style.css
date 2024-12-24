@@ -1,188 +1,144 @@
-/* Reset default margin dan padding */
+/* Global Styles */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Body */
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: Arial, sans-serif;
     line-height: 1.6;
 }
 
 /* Navbar */
 .navbar {
-    border-bottom: 2px solid #fff;
+    background-color: #333;
+    color: #fff;
     position: fixed;
     top: 0;
     width: 100%;
     z-index: 10;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .navbar-brand {
+    font-size: 1.5rem;
     font-weight: bold;
-    font-size: 1.8rem;
+}
+
+.navbar-nav {
+    list-style: none;
+    display: flex;
+    gap: 20px;
 }
 
 .nav-link {
-    font-size: 1.1rem;
-    margin-left: 20px;
+    color: #fff;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+.nav-link:hover {
+    color: #007bff;
 }
 
 /* Hero Section */
 .hero {
-    background: url('img/background.jpeg') no-repeat center center/cover;
+    background: url('img/hero-background.jpg') no-repeat center center/cover;
     color: #fff;
-    padding-top: 120px;
-    padding-bottom: 50px;
+    height: 100vh;
     text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
-/* Hero text */
 .hero h1 {
     font-size: 3rem;
-    font-weight: 600;
+    margin-bottom: 20px;
 }
 
 .hero p {
     font-size: 1.2rem;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 }
 
-.hero .btn {
-    font-size: 1.1rem;
+.btn {
+    background-color: #007bff;
+    color: #fff;
     padding: 10px 20px;
+    text-decoration: none;
+    font-size: 1rem;
+    border-radius: 5px;
 }
 
-/* Plugin Section */
-#plugin {
-    margin-top: 60px;
+.btn:hover {
+    background-color: #0056b3;
+}
+
+/* Plugins Section */
+.plugin-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
     padding: 50px 0;
 }
 
-.card {
+.plugin-card {
+    background: #fff;
     border-radius: 10px;
-    border: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 280px;
     overflow: hidden;
     transition: transform 0.3s ease;
 }
 
-.card:hover {
-    transform: scale(1.05);
+.plugin-card:hover {
+    transform: translateY(-10px);
 }
 
-.card-img-top {
+.plugin-card-img {
+    width: 100%;
     height: 200px;
     object-fit: cover;
 }
 
-.card-body {
-    background-color: #f9f9f9;
+.plugin-card-body {
     padding: 20px;
     text-align: center;
 }
 
-.card-title {
+.plugin-card-title {
     font-size: 1.5rem;
-    font-weight: bold;
     margin-bottom: 10px;
 }
 
-.card-text {
+.plugin-card-description {
     font-size: 1rem;
     margin-bottom: 15px;
 }
 
-.btn-primary {
+.btn-plugin {
     background-color: #007bff;
-    border-color: #007bff;
+    color: #fff;
+    text-decoration: none;
     padding: 10px 20px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+    border-radius: 5px;
 }
 
-.btn-primary:hover {
+.btn-plugin:hover {
     background-color: #0056b3;
-    border-color: #0056b3;
-}
-
-/* About Section */
-#about {
-    background-color: #f1f1f1;
-    padding: 50px 0;
-    text-align: center;
-}
-
-#about p {
-    font-size: 1.1rem;
-    margin-bottom: 20px;
-}
-
-/* Contact Section */
-#contact {
-    padding: 50px 0;
-    text-align: center;
-}
-
-#contact p {
-    font-size: 1.1rem;
 }
 
 /* Footer */
 footer {
     background-color: #333;
     color: #fff;
-    padding: 20px 0;
-}
-
-footer p {
-    font-size: 1rem;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    /* Navbar */
-    .navbar-nav {
-        text-align: center;
-    }
-
-    /* Hero Section */
-    .hero {
-        padding-top: 140px; /* Menyesuaikan padding untuk ponsel */
-    }
-
-    .hero h1 {
-        font-size: 2.5rem;
-    }
-
-    .hero p {
-        font-size: 1rem;
-    }
-
-    /* Card untuk plugin */
-    .card {
-        margin-bottom: 20px;
-    }
-
-    .card-img-top {
-        height: 180px;
-    }
-
-    .card-body {
-        padding: 15px;
-    }
-
-    .card-title {
-        font-size: 1.2rem;
-    }
-
-    .card-text {
-        font-size: 0.9rem;
-    }
-
-    /* Contact Section */
-    #contact p {
-        font-size: 1rem;
-    }
+    text-align: center;
+    padding: 10px 0;
 }
