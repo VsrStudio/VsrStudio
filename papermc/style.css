@@ -1,0 +1,325 @@
+/* Reset Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body and Global Settings */
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f4f4;
+}
+
+/* Navbar */
+.navbar {
+    background-color: #1a1a1a;
+    padding: 10px 0;
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.navbar-brand {
+    color: #fff;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.navbar-nav {
+    list-style: none;
+    display: flex;
+}
+
+.navbar-nav li {
+    margin-left: 15px;
+}
+
+.navbar-nav a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 5px 10px;
+    transition: background-color 0.3s;
+}
+
+.navbar-nav a:hover {
+    background-color: #333;
+    border-radius: 5px;
+}
+
+/* Hero Section */
+.hero {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 80px 0;
+}
+
+.hero h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+
+.hero .btn {
+    background-color: #ff5722;
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 18px;
+    transition: background-color 0.3s;
+}
+
+.hero .btn:hover {
+    background-color: #e64a19;
+}
+
+/* Skills Section */
+.skills {
+    padding: 50px 0;
+    background-color: #fff;
+}
+
+.skills .container {
+    text-align: center;
+}
+
+.skills h2 {
+    font-size: 36px;
+    margin-bottom: 30px;
+}
+
+.skills .skills-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.skill-card {
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.skill-card:hover {
+    transform: scale(1.05);
+}
+
+.skill-card h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.skill-card p {
+    font-size: 16px;
+    color: #555;
+}
+
+/* Search Section */
+.search {
+    background-color: #f4f4f4;
+    padding: 50px 0;
+}
+
+.search .container {
+    text-align: center;
+}
+
+.search .search-input {
+    width: 60%;
+    padding: 12px;
+    font-size: 18px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-bottom: 30px;
+}
+
+.plugin-item {
+    background-color: #fff;
+    padding: 20px;
+    margin: 10px 0;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    transition: transform 0.3s;
+}
+
+.plugin-item:hover {
+    transform: scale(1.05);
+}
+
+.plugin-item h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.plugin-item p {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.plugin-item .btn-download {
+    background-color: #ff5722;
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 18px;
+    transition: background-color 0.3s;
+}
+
+.plugin-item .btn-download:hover {
+    background-color: #e64a19;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+
+footer p {
+    font-size: 16px;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 36px;
+    }
+
+    .hero p {
+        font-size: 18px;
+    }
+
+    .search .search-input {
+        width: 80%;
+    }
+
+    .skills .skills-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Add this to the existing style.css */
+
+/* Plugin Logo Styling */
+.plugin-logo {
+    width: 80px;   /* Menyesuaikan ukuran logo, bisa diubah sesuai kebutuhan */
+    height: auto;  /* Memastikan aspek rasio gambar tetap terjaga */
+    margin-bottom: 20px;  /* Spasi antara logo dan nama plugin */
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Styling for embedded YouTube video */
+.plugin-video iframe, .hero-video iframe {
+    width: 100%;
+    max-width: 560px;
+    height: 315px;
+    border: none;
+    margin: 20px 0;
+    border-radius: 10px;
+}
+
+.plugin-video, .hero-video {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.plugin-video h3, .hero-video h2 {
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+/* Plugin Detail Page Styling */
+.plugin-detail {
+    padding: 50px 0;
+    background-color: #f9f9f9;
+}
+
+.plugin-detail .container {
+    text-align: center;
+}
+
+.plugin-title {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.plugin-header {
+    margin-bottom: 30px;
+}
+
+.plugin-logo {
+    width: 100px;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+.plugin-features ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.plugin-features li {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+.plugin-screenshots {
+    margin: 40px 0;
+}
+
+.screenshot-gallery {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.screenshot {
+    width: 300px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.plugin-download {
+    margin-top: 30px;
+}
+
+.btn-download {
+    background-color: #ff5722;
+    color: white;
+    text-decoration: none;
+    padding: 15px 30px;
+    font-size: 18px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.btn-download:hover {
+    background-color: #e64a19;
+}
