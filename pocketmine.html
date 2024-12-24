@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VsrStudio - Plugin PocketMine</title>
+    <title>Plugin PocketMine</title>
     <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
 </head>
 <body>
     <!-- Navbar -->
@@ -20,56 +21,48 @@
         </div>
     </nav>
 
-    <!-- Search Form -->
-    <section class="search">
+    <!-- Search Section -->
+    <section id="search" class="search">
         <div class="container">
-            <h2>Search PocketMine Plugins</h2>
-            <form action="#" method="GET">
-                <input type="text" name="search" placeholder="Search Plugin..." id="search-input" />
-                <button type="submit" id="search-btn">Search</button>
-            </form>
-        </div>
-    </section>
-
-    <!-- PocketMine Plugins Section -->
-    <section class="plugins">
-        <div class="container">
-            <h2 class="section-title">PocketMine Plugins</h2>
-            <!-- Plugin 1 -->
-            <div class="plugin-card">
-                <h3>VPNetwork</h3>
-                <p>A network plugin for connecting your Minecraft PocketMine server.</p>
-                <a href="#" class="btn-download">Download</a>
-            </div>
-            <!-- Plugin 2 -->
-            <div class="plugin-card">
-                <h3>MusicUI</h3>
-                <p>A plugin to add music features with UI in your Minecraft server.</p>
-                <a href="#" class="btn-download">Download</a>
-            </div>
-            <!-- Plugin 3 -->
-            <div class="plugin-card">
-                <h3>PerWorldRegister</h3>
-                <p>Register different worlds and manage them with ease.</p>
-                <a href="#" class="btn-download">Download</a>
-            </div>
-            <!-- Plugin 4 -->
-            <div class="plugin-card">
-                <h3>SurvivalGame</h3>
-                <p>Bring survival games to your server with this plugin.</p>
-                <a href="#" class="btn-download">Download</a>
-            </div>
-            <!-- Plugin 5 -->
-            <div class="plugin-card">
-                <h3>TeleportDelay</h3>
-                <p>Add teleport delays to your server for better gameplay balance.</p>
-                <a href="#" class="btn-download">Download</a>
-            </div>
-            <!-- Plugin 6 -->
-            <div class="plugin-card">
-                <h3>TopupRank</h3>
-                <p>Manage player ranks and top-up systems easily.</p>
-                <a href="#" class="btn-download">Download</a>
+            <h2 class="section-title">Search PocketMine Plugins</h2>
+            <input type="text" id="searchInput" onkeyup="searchPlugin()" placeholder="Search for plugins..." class="search-input">
+            <div id="pluginList">
+                <!-- VPNetwork Plugin -->
+                <div class="plugin-item" data-name="VPNetwork">
+                    <h3>VPNetwork</h3>
+                    <p>VPNetwork is a powerful plugin for creating a secure Minecraft server network.</p>
+                    <a href="downloads/VPNetwork.zip" class="btn btn-download" download>Download</a>
+                </div>
+                <!-- MusicUI Plugin -->
+                <div class="plugin-item" data-name="MusicUI">
+                    <h3>MusicUI</h3>
+                    <p>MusicUI allows players to enjoy interactive music interfaces in-game.</p>
+                    <a href="downloads/MusicUI.zip" class="btn btn-download" download>Download</a>
+                </div>
+                <!-- PerWorldRegister Plugin -->
+                <div class="plugin-item" data-name="PerWorldRegister">
+                    <h3>PerWorldRegister</h3>
+                    <p>PerWorldRegister allows you to register different worlds for various purposes.</p>
+                    <a href="downloads/PerWorldRegister.zip" class="btn btn-download" download>Download</a>
+                </div>
+                <!-- SurvivalGame Plugin -->
+                <div class="plugin-item" data-name="SurvivalGame">
+                    <h3>SurvivalGame</h3>
+                    <p>SurvivalGame is a plugin to create and manage survival game arenas.</p>
+                    <a href="downloads/SurvivalGame.zip" class="btn btn-download" download>Download</a>
+                </div>
+                <!-- TeleportDelay Plugin -->
+                <div class="plugin-item" data-name="TeleportDelay">
+                    <h3>TeleportDelay</h3>
+                    <p>TeleportDelay adds a configurable delay to teleport commands.</p>
+                    <a href="downloads/TeleportDelay.zip" class="btn btn-download" download>Download</a>
+                </div>
+                <!-- TopupRank Plugin -->
+                <div class="plugin-item" data-name="TopupRank">
+                    <h3>TopupRank</h3>
+                    <p>TopupRank helps you to manage player ranks through top-up actions.</p>
+                    <a href="downloads/TopupRank.zip" class="btn btn-download" download>Download</a>
+                </div>
             </div>
         </div>
     </section>
@@ -80,5 +73,23 @@
             <p>&copy; 2024 VsrStudio. All Rights Reserved.</p>
         </div>
     </footer>
+
+    <script>
+        function searchPlugin() {
+            const input = document.getElementById("searchInput");
+            const filter = input.value.toLowerCase();
+            const plugins = document.getElementById("pluginList").getElementsByClassName("plugin-item");
+
+            for (let i = 0; i < plugins.length; i++) {
+                const plugin = plugins[i];
+                const name = plugin.getAttribute("data-name").toLowerCase();
+                if (name.includes(filter)) {
+                    plugin.style.display = "";
+                } else {
+                    plugin.style.display = "none";
+                }
+            }
+        }
+    </script>
 </body>
 </html>
