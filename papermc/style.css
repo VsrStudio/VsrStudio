@@ -323,3 +323,18 @@ footer p {
 .btn-download:hover {
     background-color: #e64a19;
 }
+
+@media (max-width: 768px) {
+    .navbar-nav {
+        display: none;
+        flex-direction: column;
+    }
+
+    .navbar-nav.active {
+        display: flex;
+    }
+
+    .navbar-toggle {
+        display: block;
+    }
+}
