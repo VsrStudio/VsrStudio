@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VsrStudio Maps</title>
+    <title>Maps - VsrStudio</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -21,39 +21,46 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero">
+    <header class="hero">
         <div class="hero-content">
-            <h1>Explore Custom Maps</h1>
-            <p>Discover beautifully designed maps to enhance your Minecraft world.</p>
+            <h1>Explore Maps</h1>
+            <p>Find and download unique maps to enhance your Minecraft experience.</p>
+        </div>
+    </header>
+
+    <!-- Search Section -->
+    <section class="search-section">
+        <div class="container">
+            <input type="text" id="search-bar" class="search-bar" placeholder="Search maps...">
         </div>
     </section>
 
     <!-- Maps Section -->
     <section class="plugin-section">
         <div class="container">
-            <h2 class="section-title">Available Maps</h2>
             <div class="plugin-container">
-                <!-- Example Map 1 -->
+                <!-- Example Card -->
                 <div class="plugin-card">
-                    <img src="images/map1.jpg" alt="Map 1" class="plugin-logo">
-                    <h3>Fantasy Island</h3>
-                    <p>An expansive fantasy-themed island with stunning landscapes and hidden treasures.</p>
-                    <a href="download/map1.zip" class="btn btn-download">Download</a>
+                    <img src="images/map1.png" alt="Map 1" class="plugin-logo">
+                    <h3>Map 1</h3>
+                    <p>An exciting adventure map for exploration and fun.</p>
+                    <a href="downloads/map1.zip" class="btn">Download</a>
                 </div>
-                <!-- Example Map 2 -->
+
                 <div class="plugin-card">
-                    <img src="images/map2.jpg" alt="Map 2" class="plugin-logo">
-                    <h3>Medieval City</h3>
-                    <p>A sprawling medieval city with castles, markets, and lively streets.</p>
-                    <a href="download/map2.zip" class="btn btn-download">Download</a>
+                    <img src="images/map2.png" alt="Map 2" class="plugin-logo">
+                    <h3>Map 2</h3>
+                    <p>A challenging survival map with unique landscapes.</p>
+                    <a href="downloads/map2.zip" class="btn">Download</a>
                 </div>
-                <!-- Example Map 3 -->
+
                 <div class="plugin-card">
-                    <img src="images/map3.jpg" alt="Map 3" class="plugin-logo">
-                    <h3>Skyblock Adventure</h3>
-                    <p>A challenging skyblock map with unique biomes and quests.</p>
-                    <a href="download/map3.zip" class="btn btn-download">Download</a>
+                    <img src="images/map3.png" alt="Map 3" class="plugin-logo">
+                    <h3>Map 3</h3>
+                    <p>A creative map for building and experimenting.</p>
+                    <a href="downloads/map3.zip" class="btn">Download</a>
                 </div>
+                <!-- Add more map cards here -->
             </div>
         </div>
     </section>
@@ -64,5 +71,22 @@
             <p>&copy; 2024 VsrStudio. All Rights Reserved.</p>
         </div>
     </footer>
+
+    <!-- JavaScript -->
+    <script>
+        document.getElementById('search-bar').addEventListener('input', function() {
+            const searchTerm = this.value.toLowerCase();
+            const cards = document.querySelectorAll('.plugin-card');
+
+            cards.forEach(card => {
+                const title = card.querySelector('h3').textContent.toLowerCase();
+                if (title.includes(searchTerm)) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        });
+    </script>
 </body>
 </html>
