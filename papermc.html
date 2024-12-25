@@ -11,13 +11,13 @@
     <!-- Navbar -->
     <nav class="navbar">
         <div class="container">
-            <div class="navbar-brand">VsrStudio</div>
+            <a href="index.html" class="navbar-brand">VsrStudio</a>
             <button class="navbar-toggle" onclick="toggleNavbar()">☰</button>
-            <ul class="navbar-nav" id="navbar-nav">
+            <ul class="navbar-nav">
                 <li><a href="index.html" class="nav-link">Home</a></li>
                 <li><a href="pocketmine.html" class="nav-link">Plugin PocketMine</a></li>
                 <li><a href="papermc.html" class="nav-link">Plugin PaperMC</a></li>
-                <li><a href="#contact" class="nav-link">Contact</a></li>
+                <li><a href="maps.html" class="nav-link">Maps</a></li>
             </ul>
         </div>
     </nav>
@@ -28,43 +28,43 @@
             <h2 class="section-title">Search PaperMC Plugins</h2>
             <input type="text" id="searchInput" onkeyup="searchPlugin()" placeholder="Search for plugins..." class="search-input">
             <div id="pluginList">
-                <!-- Example Plugin 1 -->
+                <!-- Plugin Item 1 -->
                 <div class="plugin-item" data-name="BedwarsHypixel">
-                     <img src="https://hangarcdn.papermc.io/avatars/project/598.webp?v=1" alt="Bw" class="plugin-logo">
+                    <img src="https://hangarcdn.papermc.io/avatars/project/598.webp?v=1" alt="Bedwars" class="plugin-logo">
                     <h3>BedwarsHypixel</h3>
-                    <p>PluginOne is an essential tool for optimizing PaperMC server performance.</p>
-                    <p><strong>Version Support:</strong>1.21 - Latest</p>
-                    <a href="papermc/BedwarsHypixel.html" class=nav-link" download>Download</a>
+                    <p>A plugin for creating Hypixel-like Bedwars gameplay.</p>
+                    <p><strong>Version Support:</strong> 1.21 - Latest</p>
+                    <a href="papermc/BedwarsHypixel.html" class="btn btn-download" download>Download</a>
                 </div>
-                <!-- Example Plugin 2 -->
+                <!-- Plugin Item 2 -->
                 <div class="plugin-item" data-name="DuelsHypixel">
-                    <h3>DuelaHypixel</h3>
-                    <p>PluginTwo offers unique features for managing world settings in PaperMC.</p>
-                    <a href="papermc/DuelsHypixel.html" class=nav-link" download>Download</a>
+                    <h3>DuelsHypixel</h3>
+                    <p>Offers duel-based gameplay similar to Hypixel's duels mode.</p>
+                    <a href="papermc/DuelsHypixel.html" class="btn btn-download" download>Download</a>
                 </div>
-                <!-- Example Plugin 3 -->
+                <!-- Plugin Item 3 -->
                 <div class="plugin-item" data-name="Parkour">
                     <h3>Parkour</h3>
-                    <p>PluginThree adds new gameplay mechanics and challenges for players.</p>
-                    <a href="papermc/Parkour.html" class="nav-link" download>Download</a>
+                    <p>Adds parkour challenges for players.</p>
+                    <a href="papermc/Parkour.html" class="btn btn-download" download>Download</a>
                 </div>
-                <!-- Example Plugin 4 -->
+                <!-- Plugin Item 4 -->
                 <div class="plugin-item" data-name="HungerGame">
                     <h3>HungerGame</h3>
-                    <p>PluginFour provides enhanced admin commands and server management tools.</p>
-                    <a href="papermc/HungerGame.html" class="nav-link" download>Download</a>
+                    <p>Provides Hunger Games-style gameplay mechanics.</p>
+                    <a href="papermc/HungerGame.html" class="btn btn-download" download>Download</a>
                 </div>
-                <!-- Example Plugin 5 -->
+                <!-- Plugin Item 5 -->
                 <div class="plugin-item" data-name="SkyWars">
                     <h3>SkyWars</h3>
-                    <p>PluginFive integrates a custom economy system into PaperMC servers.</p>
+                    <p>Introduces a SkyWars mode with custom features.</p>
                     <a href="papermc/SkyWars.html" class="btn btn-download" download>Download</a>
                 </div>
-                <!-- Example Plugin 6 -->
+                <!-- Plugin Item 6 -->
                 <div class="plugin-item" data-name="Cosmetic3D">
                     <h3>Cosmetics3D</h3>
-                    <p>PluginSix is a utility plugin for managing server events and custom actions.</p>
-                    <a href="papermc/Cosmatic3D.html" class="btn btn-download">Download</a>
+                    <p>A plugin for adding 3D cosmetic models to servers.</p>
+                    <a href="papermc/Cosmetic3D.html" class="btn btn-download" download>Download</a>
                 </div>
             </div>
         </div>
@@ -78,25 +78,24 @@
     </footer>
 
     <script>
+        function toggleNavbar() {
+            const nav = document.querySelector('.navbar-nav');
+            nav.classList.toggle('active');
+        }
+
         function searchPlugin() {
             const input = document.getElementById("searchInput");
             const filter = input.value.toLowerCase();
-            const plugins = document.getElementById("pluginList").getElementsByClassName("plugin-item");
+            const plugins = document.querySelectorAll("#pluginList .plugin-item");
 
-            for (let i = 0; i < plugins.length; i++) {
-                const plugin = plugins[i];
+            plugins.forEach(plugin => {
                 const name = plugin.getAttribute("data-name").toLowerCase();
                 if (name.includes(filter)) {
                     plugin.style.display = "";
                 } else {
                     plugin.style.display = "none";
                 }
-                
-                function toggleNavbar() {
-        const nav = document.querySelector('.navbar-nav');
-        nav.classList.toggle('active');
-                }
-            }
+            });
         }
     </script>
 </body>
