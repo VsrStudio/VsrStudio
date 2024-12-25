@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VsrStudio Maps</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-brand">VsrStudio</div>
+            <button class="navbar-toggle" onclick="toggleNavbar()">☰</button>
+            <ul class="navbar-nav">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="pocketmine.html" class="nav-link">PocketMine</a></li>
+                <li><a href="papermc.html" class="nav-link">PaperMC</a></li>
+                <li><a href="maps.html" class="nav-link">Maps</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+        <div class="hero-content">
+            <h1>Explore Our Minecraft Maps</h1>
+            <p>Download custom Minecraft maps for your server and enhance your gaming experience!</p>
+        </div>
+    </section>
+
+    <!-- Search Section -->
+    <section id="search" class="search">
+        <div class="container">
+            <h2 class="section-title">Find Your Perfect Map</h2>
+            <input type="text" id="mapSearch" placeholder="Search maps by name or category..." onkeyup="searchMaps()">
+        </div>
+    </section>
+
+    <!-- Maps Section -->
+    <section id="maps" class="maps">
+        <div class="container">
+            <div class="map-card" data-name="SkyBlock">
+                <img src="images/skyblock.jpg" alt="SkyBlock" class="map-image">
+                <h3>SkyBlock</h3>
+                <p>Challenge yourself with this floating island survival map!</p>
+                <a href="downloads/skyblock.zip" class="btn btn-download" download>Download</a>
+            </div>
+            <div class="map-card" data-name="PvP Arena">
+                <img src="images/pvp-arena.jpg" alt="PvP Arena" class="map-image">
+                <h3>PvP Arena</h3>
+                <p>Battle it out with your friends in this action-packed arena!</p>
+                <a href="downloads/pvp-arena.zip" class="btn btn-download" download>Download</a>
+            </div>
+            <div class="map-card" data-name="Parkour Adventure">
+                <img src="images/parkour.jpg" alt="Parkour Adventure" class="map-image">
+                <h3>Parkour Adventure</h3>
+                <p>Test your skills with this thrilling parkour map!</p>
+                <a href="downloads/parkour.zip" class="btn btn-download" download>Download</a>
+            </div>
+            <!-- Add more map cards as needed -->
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 VsrStudio. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Search Script -->
+    <script>
+        function searchMaps() {
+            const input = document.getElementById("mapSearch").value.toLowerCase();
+            const cards = document.querySelectorAll(".map-card");
+            
+            cards.forEach(card => {
+                const name = card.getAttribute("data-name").toLowerCase();
+                if (name.includes(input)) {
+                    card.style.display = "block";
+                } else {
+                    card.style.display = "none";
+                }
+            });
+        }
+
+        function toggleNavbar() {
+            const nav = document.querySelector('.navbar-nav');
+            nav.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
