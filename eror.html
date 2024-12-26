@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download Link Not Available</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="navbar-brand">VsrStudio</a>
+            <button class="navbar-toggle" onclick="toggleNavbar()">☰</button>
+            <ul class="navbar-nav">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="pocketmine.html" class="nav-link">Plugin PocketMine</a></li>
+                <li><a href="papermc.html" class="nav-link">Plugin PaperMC</a></li>
+                <li><a href="maps.html" class="nav-link">Maps</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Error Message Section -->
+    <section id="error-message" class="error-message">
+        <div class="container">
+            <h2>Download Link Not Available</h2>
+            <p>We're sorry, but the download link for the plugin is currently unavailable. Please contact the admin for further assistance.</p>
+            <p>If you need immediate help, please reach out to us via the <a href="contact.html">contact page</a>.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 VsrStudio. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleNavbar() {
+            const nav = document.querySelector('.navbar-nav');
+            nav.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
