@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Duels - Plugin PocketMine</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="https://vsrstudio.pages.dev/index.html" class="navbar-brand">VsrStudio</a>
+            <button class="navbar-toggle" onclick="toggleNavbar()">☰</button>
+            <ul class="navbar-nav">
+                <li><a href="https://vsrstudio.pages.dev/index.html" class="nav-link">Home</a></li>
+                <li><a href="https://vsrstudio.pages.dev/pocketmine.html" class="nav-link">Plugin PocketMine</a></li>
+                <li><a href="https://vsrstudio.pages.dev/papermc.html" class="nav-link">Plugin PaperMC</a></li>
+                <li><a href="https://vsrstudio.pages.dev/maps.html" class="nav-link">Maps</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Plugin Detail Section -->
+    <section id="plugin-detail" class="plugin-detail">
+        <div class="container">
+            <h2 class="plugin-title">Duels</h2>
+            <div class="plugin-header">
+                <img src="data:image/jpeg;base64,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"alt="Duels" class="plugin-logo">
+                <p>Duels is an exciting plugin for PocketMine-MP servers that enables players to challenge each other in intense one-on-one battles. With customizable arenas, leaderboards, and rewards, Duels is perfect for competitive players and server communities.</p>
+            </div>
+
+            <!-- Features Section -->
+            <section class="plugin-features">
+                <h3>Features</h3>
+                <ul>
+                    <li>Create and manage multiple duel arenas</li>
+                    <li>Customizable kits and settings for each duel</li>
+                    <li>Real-time leaderboards to track top players</li>
+                    <li>Support for rewards upon duel completion</li>
+                    <li>Highly optimized for low-latency gameplay</li>
+                    <li>Easy-to-use commands and intuitive setup</li>
+                    <li>Fully supports PocketMine API version 5</li>
+                </ul>
+            </section>
+
+            <!-- Video Section -->
+            <section class="plugin-video">
+                <h3>Watch Plugin Overview</h3>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/APs-avYNlxA?si=O6yQr2oshDxZo-zI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </section>
+
+            <!-- Download Button -->
+            <section class="plugin-download">
+                <a href="https://vsrstudio" class="btn-download">Download Duels</a>
+            </section>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 VsrStudio. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleNavbar() {
+            const nav = document.querySelector('.navbar-nav');
+            nav.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
