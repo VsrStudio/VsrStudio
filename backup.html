@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Backup VsrStudio</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="navbar-brand">VsrStudio</a>
+            <button class="navbar-toggle" onclick="toggleNavbar()">☰</button>
+            <ul class="navbar-nav">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="pocketmine.html" class="nav-link">Plugin PocketMine</a></li>
+                <li><a href="papermc.html" class="nav-link">Plugin PaperMC</a></li>
+                <li><a href="maps.html" class="nav-link">Maps</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Search Section -->
+    <section id="search" class="search">
+        <div class="container">
+            <h2 class="section-title">Search Backup</h2>
+            <input type="text" id="searchInput" onkeyup="searchPlugin()" placeholder="Search for plugins..." class="search-input">
+            <div id="pluginList">
+                <!-- CosmeticUIPlugin -->
+                <div class="plugin-item" data-name="CosmeticUI">
+                    <h3>Ultimate Survival Setup</h3>
+                    <p>PaperMC</p>
+                    <a href="pocketmine/CosmeticUI" class="btn btn-download">Free Download</a>
+                </div>
+                <!-- CosmeticUIPlugin -->
+                <div class="plugin-item" data-name="Crates3D">
+                    <h3>Crates3D</h3>
+                    <p>Gacha Crates Like Model 3D</p>
+                    <a href="pocketmine/Crates3D" class="btn btn-download">Download</a>
+                </div>
+                <!-- VPNetwork Plugin -->
+                <div class="plugin-item" data-name="NewBedwars">
+                    <h3>NewBedwars</h3>
+                    <p>This NewBedwars plugin is similar to hypixel and venity.</p>
+                    <a href="pocketmine/NewBedwars" class="btn btn-download">Download</a>
+                </div>
+                <!-- VPNetwork Plugin -->
+                <div class="plugin-item" data-name="Duels">
+                    <h3>Duels</h3>
+                    <p>This Duels plugin is perfect and very similar to hypixel.</p>
+                    <a href="pocketmine/Duels" class="btn btn-download">Download</a>
+                </div>
+                <!-- VPNetwork Plugin -->
+                <div class="plugin-item" data-name="VPNetwork">
+                    <h3>VPNetwork</h3>
+                    <p>VPNetwork is a powerful plugin for creating a secure Minecraft server network.</p>
+                    <a href="pocketmine/VPNetwork" class="btn btn-download">Download</a>
+                </div>
+                <!-- MusicUI Plugin -->
+                <div class="plugin-item" data-name="MusicUI">
+                    <h3>MusicUI</h3>
+                    <p>MusicUI allows players to enjoy interactive music interfaces in-game.</p>
+                    <a href="https://github.com/VsrStudio/MusicUI" class="btn btn-download">Download</a>
+                </div>
+                <!-- PerWorldRegister Plugin -->
+                <div class="plugin-item" data-name="PerWorldRegister">
+                    <h3>PerWorldRegister</h3>
+                    <p>PerWorldRegister allows you to register different worlds for various purposes.</p>
+                    <a href="https://github.com/VsrStudio/PerWorldRegister" class="btn btn-download">Download</a>
+                </div>
+                <!-- SurvivalGame Plugin -->
+                <div class="plugin-item" data-name="SurvivalGame">
+                    <h3>SurvivalGame</h3>
+                    <p>SurvivalGame is a plugin to create and manage survival game arenas.</p>
+                    <a href="https://github.com/VsrStudio/SurvivalGames" class="btn btn-download">Download</a>
+                </div>
+                <!-- TeleportDelay Plugin -->
+                <div class="plugin-item" data-name="TeleportDelay">
+                    <h3>TeleportDelay</h3>
+                    <p>TeleportDelay adds a configurable delay to teleport commands.</p>
+                    <a href="https://github.com/VsrStudio/TeleportDelay" class="btn btn-download">Download</a>
+                </div>
+                <!-- TopupRank Plugin -->
+                <div class="plugin-item" data-name="TopupRank">
+                    <h3>TopupRank</h3>
+                    <p>TopupRank helps you to manage player ranks through top-up actions.</p>
+                    <a href="https://github.com/VsrStudio/TopupRank" class="btn btn-download">Download</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 VsrStudio. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleNavbar() {
+            const nav = document.querySelector('.navbar-nav');
+            nav.classList.toggle('active');
+        }
+
+        function searchPlugin() {
+            const input = document.getElementById("searchInput");
+            const filter = input.value.toLowerCase();
+            const plugins = document.getElementById("pluginList").getElementsByClassName("plugin-item");
+
+            for (let i = 0; i < plugins.length; i++) {
+                const plugin = plugins[i];
+                const name = plugin.getAttribute("data-name").toLowerCase();
+                if (name.includes(filter)) {
+                    plugin.style.display = "";
+                } else {
+                    plugin.style.display = "none";
+                }
+            }
+        }
+    </script>
+</body>
+</html>
