@@ -373,6 +373,20 @@ footer p {
     margin-top: 30px;
 }
 
+.plugin-images {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.plugin-image {
+    width: 80%; /* Atur ukuran gambar agar responsif */
+    max-width: 600px; /* Batas maksimum ukuran gambar */
+    height: auto;
+    border-radius: 10px; /* Membuat sudut gambar sedikit melengkung */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Menambahkan efek bayangan */
+    margin: 10px 0;
+}
+
 .btn-download {
     background-color: #ff5722;
     color: white;
