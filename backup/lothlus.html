@@ -1,105 +1,136 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bedwars Setup</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        .category {
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        .category-header {
+            background: #007bff;
+            color: white;
+            padding: 10px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        .category-content {
+            display: none;
+            padding: 10px;
+            background: #f9f9f9;
+        }
+        .plugin-image {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 5px 0;
+        }
+    </style>
 </head>
 <body>
-    <!-- Navbar -->
-    <nav class="navbar">
-        <div class="container">
-            <a href="https://vsrstudio.pages.dev/index.html" class="navbar-brand">VsrStudio</a>
-            <button class="navbar-toggle" onclick="toggleNavbar()">☰</button>
-            <ul class="navbar-nav">
-                <li><a href="https://vsrstudio.pages.dev/index.html" class="nav-link">Home</a></li>
-                <li><a href="https://vsrstudio.pages.dev/pocketmine.html" class="nav-link">Plugin PocketMine</a></li>
-                <li><a href="https://vsrstudio.pages.dev/papermc.html" class="nav-link">Plugin PaperMC</a></li>
-                <li><a href="https://vsrstudio.pages.dev/backup.html" class="nav-link">Backup</a></li>
-            </ul>
+
+    <h2>Bedwars Setup</h2>
+
+    <!-- Kategori Gambar -->
+    <div class="category">
+        <div class="category-header" onclick="toggleCategory('lobby')">LOBBY</div>
+        <div id="lobby" class="category-content">
+            <img src="https://i.imgur.com/VQ85X2p.png" class="plugin-image">
+            <img src="https://i.imgur.com/OmpimZM.png" class="plugin-image">
+            <img src="https://i.imgur.com/33Hyipt.png" class="plugin-image">
+            <img src="https://i.imgur.com/1b8gIl3.png" class="plugin-image">
+            <img src="https://i.imgur.com/7tk7QcF.png" class="plugin-image">
+            <img src="https://i.imgur.com/dx10ILY.png" class="plugin-image">
+            <img src="https://i.imgur.com/u5h9bYR.png" class="plugin-image">
         </div>
-    </nav>
+    </div>
 
-    <!-- Plugin Detail Section -->
-    <section id="plugin-detail" class="plugin-detail">
-        <div class="container">
-            <h2 class="plugin-title">Bedwars Setup</h2>
-            <div class="plugin-header">
-                <img src="https://i.imgur.com/s8ZiHdn.png" alt="Bedwars Setup" class="plugin-logo">
-            </div>
-
-            <!-- Plugin Images -->
-            <section class="plugin-images">
-                <h3>LOBBY</h3>
-                <img src="https://i.imgur.com/VQ85X2p.png" class="plugin-image">
-                <img src="https://i.imgur.com/OmpimZM.png" class="plugin-image">
-                <img src="https://i.imgur.com/33Hyipt.png" class="plugin-image">
-                <img src="https://i.imgur.com/1b8gIl3.png" class="plugin-image">
-                <img src="https://i.imgur.com/7tk7QcF.png" class="plugin-image">
-                <img src="https://i.imgur.com/dx10ILY.png" class="plugin-image">
-                <img src="https://i.imgur.com/u5h9bYR.png" class="plugin-image">
-
-                <h3>SURVIVAL</h3>
-                <img src="https://i.imgur.com/Ljc8tAt.png" class="plugin-image">
-                <img src="https://i.imgur.com/uF4Lqb6.png" class="plugin-image">
-                <img src="https://i.imgur.com/bFNtpVT.png" class="plugin-image">
-                <img src="https://i.imgur.com/wTJTBu4.png" class="plugin-image">
-                <img src="https://i.imgur.com/fiX9Ath.png" class="plugin-image">
-
-                <h3>VIVASMP</h3>
-                <img src="https://i.imgur.com/8Eu0eoV.png" class="plugin-image">
-                <img src="https://i.imgur.com/bsXt1cP.png" class="plugin-image">
-                <img src="https://i.imgur.com/Wb3Fu0Y.png" class="plugin-image">
-                <img src="https://i.imgur.com/lcaIoKr.png" class="plugin-image">
-
-                <h3>DUELS</h3>
-                <img src="https://i.imgur.com/xzViVwI.png" class="plugin-image">
-                <img src="https://i.imgur.com/yENFZsL.png" class="plugin-image">
-
-                <h3>BEDWARS</h3>
-                <img src="https://i.imgur.com/qdhL601.png" class="plugin-image">
-                <img src="https://i.imgur.com/LpCvNFj.png" class="plugin-image">
-                <img src="https://i.imgur.com/qQAriyx.png" class="plugin-image">
-                <img src="https://i.imgur.com/xyWPabM.png" class="plugin-image">
-
-                <h3>SKYWARS</h3>
-                <img src="https://i.imgur.com/qQhhSpp.png" class="plugin-image">
-                <img src="https://i.imgur.com/sscH9LP.png" class="plugin-image">
-                <img src="https://i.imgur.com/272wzCQ.png" class="plugin-image">
-                <img src="https://i.imgur.com/dmBJpEM.png" class="plugin-image">
-                <img src="https://i.imgur.com/q7CAUkY.png" class="plugin-image">
-                <img src="https://i.imgur.com/expBcT9.png" class="plugin-image">
-                <img src="https://i.imgur.com/yGeVwpn.png" class="plugin-image">
-                <img src="https://i.imgur.com/DApKLFr.png" class="plugin-image">
-                <img src="https://i.imgur.com/LwicerF.png" class="plugin-image">
-                <img src="https://i.imgur.com/jpekchN.png" class="plugin-image">
-                <img src="https://i.imgur.com/CctauTM.png" class="plugin-image">
-
-                <h3>SQUIDGAME</h3>
-                <img src="https://i.imgur.com/WsnmCGn.png" class="plugin-image">
-                <img src="https://i.imgur.com/v1sTOfD.png" class="plugin-image">
-            </section>
-
-            <!-- WhatsApp Button -->
-            <section class="plugin-download">
-                <a href="https://wa.me/6285711051518?text=bang%20beli%20backup%20bedwars%20yang%20di%20web%20https%3A%2F%2Fvsrstudio.web.id%2Fbackup%2Fbedwars" class="btn-download">Beli via WhatsApp</a>
-            </section>
+    <div class="category">
+        <div class="category-header" onclick="toggleCategory('survival')">SURVIVAL</div>
+        <div id="survival" class="category-content">
+            <img src="https://i.imgur.com/Ljc8tAt.png" class="plugin-image">
+            <img src="https://i.imgur.com/uF4Lqb6.png" class="plugin-image">
+            <img src="https://i.imgur.com/bFNtpVT.png" class="plugin-image">
+            <img src="https://i.imgur.com/wTJTBu4.png" class="plugin-image">
+            <img src="https://i.imgur.com/fiX9Ath.png" class="plugin-image">
         </div>
-    </section>
+    </div>
 
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <p>&copy; 2024 VsrStudio. All Rights Reserved.</p>
+    <div class="category">
+        <div class="category-header" onclick="toggleCategory('vivasmp')">VIVASMP</div>
+        <div id="vivasmp" class="category-content">
+            <img src="https://i.imgur.com/8Eu0eoV.png" class="plugin-image">
+            <img src="https://i.imgur.com/bsXt1cP.png" class="plugin-image">
+            <img src="https://i.imgur.com/Wb3Fu0Y.png" class="plugin-image">
+            <img src="https://i.imgur.com/lcaIoKr.png" class="plugin-image">
         </div>
-    </footer>
+    </div>
+
+    <div class="category">
+        <div class="category-header" onclick="toggleCategory('duels')">DUELS</div>
+        <div id="duels" class="category-content">
+            <img src="https://i.imgur.com/xzViVwI.png" class="plugin-image">
+            <img src="https://i.imgur.com/yENFZsL.png" class="plugin-image">
+        </div>
+    </div>
+
+    <div class="category">
+        <div class="category-header" onclick="toggleCategory('bedwars')">BEDWARS</div>
+        <div id="bedwars" class="category-content">
+            <img src="https://i.imgur.com/qdhL601.png" class="plugin-image">
+            <img src="https://i.imgur.com/LpCvNFj.png" class="plugin-image">
+            <img src="https://i.imgur.com/qQAriyx.png" class="plugin-image">
+            <img src="https://i.imgur.com/xyWPabM.png" class="plugin-image">
+        </div>
+    </div>
+
+    <div class="category">
+        <div class="category-header" onclick="toggleCategory('skywars')">SKYWARS</div>
+        <div id="skywars" class="category-content">
+            <img src="https://i.imgur.com/qQhhSpp.png" class="plugin-image">
+            <img src="https://i.imgur.com/sscH9LP.png" class="plugin-image">
+            <img src="https://i.imgur.com/272wzCQ.png" class="plugin-image">
+            <img src="https://i.imgur.com/dmBJpEM.png" class="plugin-image">
+            <img src="https://i.imgur.com/q7CAUkY.png" class="plugin-image">
+            <img src="https://i.imgur.com/expBcT9.png" class="plugin-image">
+            <img src="https://i.imgur.com/yGeVwpn.png" class="plugin-image">
+            <img src="https://i.imgur.com/DApKLFr.png" class="plugin-image">
+            <img src="https://i.imgur.com/LwicerF.png" class="plugin-image">
+            <img src="https://i.imgur.com/jpekchN.png" class="plugin-image">
+            <img src="https://i.imgur.com/CctauTM.png" class="plugin-image">
+        </div>
+    </div>
+
+    <div class="category">
+        <div class="category-header" onclick="toggleCategory('squidgame')">SQUIDGAME</div>
+        <div id="squidgame" class="category-content">
+            <img src="https://i.imgur.com/WsnmCGn.png" class="plugin-image">
+            <img src="https://i.imgur.com/v1sTOfD.png" class="plugin-image">
+        </div>
+    </div>
+
+    <!-- Tombol WhatsApp -->
+    <div style="text-align: center; margin-top: 20px;">
+        <a href="https://wa.me/6285711051518?text=bang%20beli%20backup%20bedwars%20yang%20di%20web%20https%3A%2F%2Fvsrstudio.web.id%2Fbackup%2Fbedwars" class="btn-download" style="display: inline-block; padding: 10px 20px; background: #25d366; color: white; text-decoration: none; font-size: 18px; border-radius: 5px;">
+            Beli via WhatsApp
+        </a>
+    </div>
 
     <script>
-        function toggleNavbar() {
-            const nav = document.querySelector('.navbar-nav');
-            nav.classList.toggle('active');
+        function toggleCategory(id) {
+            var content = document.getElementById(id);
+            if (content.style.display === "none" || content.style.display === "") {
+                content.style.display = "block";
+            } else {
+                content.style.display = "none";
+            }
         }
     </script>
+
 </body>
 </html>
