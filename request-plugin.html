@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Request Plugin - VsrStudio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="https://vsrstudio.pages.dev/index.html" class="navbar-brand">VsrStudio</a>
+            <button class="navbar-toggle" onclick="toggleNavbar()">☰</button>
+            <ul class="navbar-nav">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="pocketmine.html" class="nav-link">Plugin PocketMine</a></li>
+                <li><a href="papermc.html" class="nav-link">Plugin PaperMC</a></li>
+                <li><a href="backup.html" class="nav-link">Backup</a></li>
+                <li><a href="request-plugin.html" class="nav-link active">Request Plugin</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Form Request Plugin -->
+    <section id="request-plugin" class="request-plugin">
+        <div class="container">
+            <h2>Request Plugin Custom</h2>
+            <p>Isi formulir di bawah untuk memesan plugin custom PocketMine dengan fitur sesuai kebutuhan Anda.</p>
+
+            <form id="pluginForm">
+                <label for="pluginName">Nama Plugin:</label>
+                <input type="text" id="pluginName" name="pluginName" placeholder="Contoh: RankSystem, GuildManager" required>
+
+                <label for="apiVersion">API PocketMine:</label>
+                <select id="apiVersion" name="apiVersion" required>
+                    <option value="API 5">API 5 (Terbaru)</option>
+                    <option value="API 4">API 4</option>
+                    <option value="API 3">API 3</option>
+                </select>
+
+                <label for="pluginType">Jenis Plugin:</label>
+                <select id="pluginType" name="pluginType" onchange="updatePrice()" required>
+                    <option value="Minigame">Minigame</option>
+                    <option value="Ekonomi">Ekonomi</option>
+                    <option value="Cosmetic">Cosmetic</option>
+                    <option value="UI/GUI">UI/GUI</option>
+                    <option value="Utility">Utility</option>
+                    <option value="Lainnya">Lainnya</option>
+                </select>
+
+                <label for="pluginDesc">Deskripsi Plugin:</label>
+                <textarea id="pluginDesc" name="pluginDesc" placeholder="Jelaskan fitur dan fungsionalitas yang diinginkan" required></textarea>
+
+                <label for="additionalFeatures">Fitur Tambahan (Opsional):</label>
+                <input type="text" id="additionalFeatures" name="additionalFeatures" placeholder="Misalnya: ScoreHud, EconomyAPI, Leaderboard">
+
+                <p><strong>Estimasi Harga:</strong> <span id="priceEstimate">Rp 50.000 - Rp 200.000</span></p>
+
+                <button type="button" class="btn-request" onclick="sendToWhatsApp()">Kirim via WhatsApp</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 VsrStudio. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleNavbar() {
+            const nav = document.querySelector('.navbar-nav');
+            nav.classList.toggle('active');
+        }
+
+        function updatePrice() {
+            let pluginType = document.getElementById("pluginType").value;
+            let priceRange = "";
+
+            switch (pluginType) {
+                case "Minigame":
+                    priceRange = "Rp 150.000 - Rp 500.000";
+                    break;
+                case "Ekonomi":
+                    priceRange = "Rp 100.000 - Rp 300.000";
+                    break;
+                case "Cosmetic":
+                    priceRange = "Rp 75.000 - Rp 200.000";
+                    break;
+                case "UI/GUI":
+                    priceRange = "Rp 50.000 - Rp 150.000";
+                    break;
+                case "Utility":
+                    priceRange = "Rp 100.000 - Rp 250.000";
+                    break;
+                case "Lainnya":
+                    priceRange = "Rp 50.000 - Rp 500.000";
+                    break;
+                default:
+                    priceRange = "Rp 50.000 - Rp 200.000";
+            }
+
+            document.getElementById("priceEstimate").innerText = priceRange;
+        }
+
+        function sendToWhatsApp() {
+            let pluginName = document.getElementById("pluginName").value;
+            let apiVersion = document.getElementById("apiVersion").value;
+            let pluginType = document.getElementById("pluginType").value;
+            let pluginDesc = document.getElementById("pluginDesc").value;
+            let additionalFeatures = document.getElementById("additionalFeatures").value;
+            let priceEstimate = document.getElementById("priceEstimate").innerText;
+
+            if (pluginName === "" || pluginDesc === "") {
+                alert("Harap isi semua kolom yang diperlukan!");
+                return;
+            }
+
+            let message = `Halo, saya ingin request plugin custom.\n\n` +
+                          `Nama Plugin: ${pluginName}\n` +
+                          `API PocketMine: ${apiVersion}\n` +
+                          `Jenis Plugin: ${pluginType}\n` +
+                          `Deskripsi: ${pluginDesc}\n` +
+                          `Fitur Tambahan: ${additionalFeatures ? additionalFeatures : "-"}\n` +
+                          `Estimasi Harga: ${priceEstimate}\n\n` +
+                          `Terima kasih!`;
+
+            let waLink = `https://wa.me/6285711051518?text=${encodeURIComponent(message)}`;
+            window.open(waLink, "_blank");
+        }
+    </script>
+
+</body>
+</html>
