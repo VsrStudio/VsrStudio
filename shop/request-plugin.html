@@ -218,7 +218,7 @@ footer {
                 <label for="additionalFeatures">Fitur Tambahan (Opsional):</label>
                 <input type="text" id="additionalFeatures" name="additionalFeatures" placeholder="Misalnya: ScoreHud, EconomyAPI, Leaderboard">
 
-                <p><strong>Estimasi Harga:</strong> <span id="priceEstimate">Rp 50.000 - Rp 200.000</span></p>
+                <p><strong>Estimasi Harga:</strong> <span id="priceEstimate">Rp 5.000 - Rp 1.000.000</span></p>
 
                 <button type="button" class="btn-request" onclick="sendToWhatsApp()">Kirim via WhatsApp</button>
             </form>
@@ -244,25 +244,25 @@ footer {
 
             switch (pluginType) {
                 case "Minigame":
-                    priceRange = "Rp 150.000 - Rp 500.000";
+                    priceRange = "Rp 50.000 - Rp 1.000.000";
                     break;
                 case "Ekonomi":
-                    priceRange = "Rp 100.000 - Rp 300.000";
+                    priceRange = "Rp 10.000 - Rp 300.000";
                     break;
                 case "Cosmetic":
-                    priceRange = "Rp 75.000 - Rp 200.000";
+                    priceRange = "Rp 15.000 - Rp 500.000";
                     break;
                 case "UI/GUI":
-                    priceRange = "Rp 50.000 - Rp 150.000";
+                    priceRange = "Rp 5.000 - Rp 100.000";
                     break;
                 case "Utility":
-                    priceRange = "Rp 100.000 - Rp 250.000";
+                    priceRange = "Rp 10.000 - Rp 500.000";
                     break;
                 case "Lainnya":
-                    priceRange = "Rp 50.000 - Rp 500.000";
+                    priceRange = "Rp 5.000 - Rp 1.000.000";
                     break;
                 default:
-                    priceRange = "Rp 50.000 - Rp 200.000";
+                    priceRange = "Rp 5.000 - Rp 1.000.000";
             }
 
             document.getElementById("priceEstimate").innerText = priceRange;
