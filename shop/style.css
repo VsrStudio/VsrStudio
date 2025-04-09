@@ -145,6 +145,39 @@ body {
   border-radius: 12px;
 }
 
+/* Formulir Testimoni */
+.testi-form {
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.testi-form label {
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.testi-form input,
+.testi-form select,
+.testi-form textarea {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-family: 'Outfit', sans-serif;
+  font-size: 16px;
+  resize: none;
+  transition: border-color 0.2s;
+}
+
+.testi-form input:focus,
+.testi-form select:focus,
+.testi-form textarea:focus {
+  border-color: #4f46e5;
+  outline: none;
+}
+
 .testi-form input[type="file"] {
   padding: 10px;
   border: 1px dashed #ccc;
