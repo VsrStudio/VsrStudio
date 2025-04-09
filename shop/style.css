@@ -1,109 +1,123 @@
+/* Global Styles */
 body {
   font-family: 'Outfit', sans-serif;
   margin: 0;
   background: #f8f9fa;
   color: #333;
+  line-height: 1.6;
 }
 
 .container {
   max-width: 1200px;
   margin: auto;
   padding: 0 20px;
+  box-sizing: border-box;
 }
 
-/* Hero */
+/* Hero Section */
 .hero-section {
-  background: #4f46e5;
+  background: linear-gradient(135deg, #4f46e5, #6366f1);
   color: #fff;
   text-align: center;
-  padding: 60px 20px;
+  padding: 70px 20px;
 }
 .hero-section h1 {
-  font-size: 36px;
-  margin-bottom: 10px;
+  font-size: 40px;
+  margin-bottom: 12px;
+}
+.hero-section p {
+  font-size: 18px;
+  opacity: 0.9;
 }
 
-/* Stats */
+/* Stats Section */
 .stats-section {
   background: #fff;
-  padding: 40px 0;
+  padding: 50px 0;
 }
 .stats {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
+  gap: 30px;
 }
 .stat-box {
   text-align: center;
-  margin: 20px;
+  flex: 1 1 200px;
 }
 .stat-box h2 {
-  font-size: 36px;
+  font-size: 40px;
   color: #4f46e5;
+  margin-bottom: 8px;
 }
 .stat-box p {
-  margin-top: 5px;
   font-weight: 600;
+  font-size: 16px;
 }
 
-/* Testimoni */
+/* Testimoni Section */
 .testimoni {
-  padding: 50px 0;
+  padding: 60px 0;
   background: #f1f5f9;
 }
 .section-title {
   text-align: center;
-  font-size: 28px;
-  margin-bottom: 30px;
+  font-size: 30px;
+  margin-bottom: 40px;
+  color: #1f2937;
 }
 .testimoni-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 25px;
 }
 .testi-card {
-  background: #fff;
-  padding: 25px;
-  border-radius: 12px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-  transition: transform 0.2s ease;
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 14px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+  transition: all 0.25s ease;
 }
 .testi-card:hover {
-  transform: scale(1.03);
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
 }
 .stars {
   color: #facc15;
-  font-size: 20px;
-  margin-bottom: 10px;
+  font-size: 22px;
+  margin-bottom: 12px;
 }
 .testi-text {
   font-style: italic;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
+  color: #374151;
 }
 .testi-name {
   font-weight: bold;
+  color: #111827;
 }
 
-/* Button */
+/* Button Style */
 .btn {
   display: inline-block;
-  margin-top: 40px;
-  padding: 12px 24px;
+  margin-top: 45px;
+  padding: 14px 28px;
   background: #4f46e5;
   color: #fff;
   text-decoration: none;
-  border-radius: 8px;
-  transition: 0.2s;
+  border-radius: 10px;
+  font-weight: 600;
+  transition: background 0.2s ease;
 }
 .btn:hover {
   background: #4338ca;
 }
 
-/* Footer */
+/* Footer Section */
 .footer {
   background: #111827;
-  color: #fff;
+  color: #d1d5db;
   text-align: center;
-  padding: 20px 0;
+  padding: 22px 0;
   font-size: 14px;
 }
