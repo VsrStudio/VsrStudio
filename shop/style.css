@@ -145,6 +145,13 @@ body {
   border-radius: 12px;
 }
 
+.testi-form input[type="file"] {
+  padding: 10px;
+  border: 1px dashed #ccc;
+  background: #f8fafc;
+  cursor: pointer;
+}
+
 /* Tombol Navigasi Slider */
 .slider-btn {
   position: absolute;
