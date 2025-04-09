@@ -6,13 +6,96 @@
   <title>Kirim Testimoni - VsrStudio</title>
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600&display=swap" rel="stylesheet"/>
+  <style>
+    body {
+      font-family: 'Outfit', sans-serif;
+      margin: 0;
+      background: #f7f7f9;
+      color: #333;
+    }
+
+    .hero-section {
+      background: linear-gradient(135deg, #5e60ce, #4ea8de);
+      color: white;
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 28px;
+      color: #333;
+    }
+
+    .testi-form {
+      background: white;
+      padding: 30px;
+      border-radius: 16px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.05);
+    }
+
+    .testi-form label {
+      display: block;
+      margin-top: 15px;
+      font-weight: 600;
+    }
+
+    .testi-form input,
+    .testi-form select,
+    .testi-form textarea {
+      width: 100%;
+      padding: 12px;
+      margin-top: 6px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      font-size: 16px;
+    }
+
+    .testi-form input[type="file"] {
+      padding: 6px;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 20px;
+      background-color: #5e60ce;
+      color: white;
+      padding: 14px 28px;
+      border: none;
+      border-radius: 10px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.3s ease;
+      text-decoration: none;
+    }
+
+    .btn:hover {
+      background-color: #4c4fc1;
+    }
+
+    .footer {
+      text-align: center;
+      padding: 20px;
+      background: #ececec;
+      font-size: 14px;
+      color: #666;
+      margin-top: 40px;
+    }
+  </style>
 </head>
 <body>
 
   <header class="hero-section">
     <div class="container">
       <h1>Kirim Testimoni</h1>
-      <p>Bagikan pengalamanmu menggunakan layanan plugin dari VsrStudio.</p>
+      <p>Bagikan pengalamanmu menggunakan layanan plugin dari <strong>VsrStudio</strong>.</p>
     </div>
   </header>
 
@@ -33,7 +116,7 @@
         </select>
 
         <label for="pesan">Pesan Testimoni</label>
-        <textarea id="pesan" name="pesan" rows="5" required></textarea>
+        <textarea id="pesan" name="pesan" rows="5" placeholder="Tulis kesan dan pengalamanmu..." required></textarea>
 
         <label for="foto">Upload Foto (Opsional)</label>
         <input type="file" id="foto" name="foto" accept="image/*" />
