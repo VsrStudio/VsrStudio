@@ -5,295 +5,302 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Request Plugin - VsrStudio</title>
     <style>
-        /* Reset default styles */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Arial', sans-serif;
-}
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
 
-body {
-    background-color: #f4f4f4;
-    color: #333;
-    line-height: 1.6;
-}
+        body {
+            background-color: #f4f4f4;
+            color: #333;
+            line-height: 1.6;
+        }
 
-/* Navbar */
-.navbar {
-    background: #222;
-    padding: 15px 0;
-    text-align: center;
-}
+        .navbar {
+            background: #222;
+            padding: 15px 0;
+            text-align: center;
+        }
 
-.navbar .container {
-    max-width: 1100px;
-    margin: auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 20px;
-}
+        .navbar .container {
+            max-width: 1100px;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
 
-.navbar-brand {
-    color: white;
-    font-size: 22px;
-    text-decoration: none;
-    font-weight: bold;
-}
+        .navbar-brand {
+            color: white;
+            font-size: 22px;
+            text-decoration: none;
+            font-weight: bold;
+        }
 
-.navbar-toggle {
-    display: none;
-    background: none;
-    color: white;
-    border: none;
-    font-size: 24px;
-    cursor: pointer;
-}
+        .navbar-toggle {
+            display: none;
+            background: none;
+            color: white;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+        }
 
-.navbar-nav {
-    list-style: none;
-    display: flex;
-}
+        .navbar-nav {
+            list-style: none;
+            display: flex;
+        }
 
-.navbar-nav li {
-    margin: 0 10px;
-}
+        .navbar-nav li {
+            margin: 0 10px;
+        }
 
-.navbar-nav .nav-link {
-    color: white;
-    text-decoration: none;
-    padding: 8px 15px;
-    transition: 0.3s;
-}
+        .navbar-nav .nav-link {
+            color: white;
+            text-decoration: none;
+            padding: 8px 15px;
+            transition: 0.3s;
+        }
 
-.navbar-nav .nav-link:hover,
-.navbar-nav .active {
-    background: #ff9800;
-    border-radius: 5px;
-}
+        .navbar-nav .nav-link:hover,
+        .navbar-nav .active {
+            background: #ff9800;
+            border-radius: 5px;
+        }
 
-/* Form Section */
-.request-plugin {
-    background: white;
-    padding: 40px 20px;
-    margin: 20px auto;
-    max-width: 600px;
-    border-radius: 8px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-}
+        .request-plugin {
+            background: white;
+            padding: 40px 20px;
+            margin: 20px auto;
+            max-width: 600px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
 
-.request-plugin h2 {
-    text-align: center;
-    margin-bottom: 10px;
-}
+        .request-plugin h2 {
+            text-align: center;
+            margin-bottom: 10px;
+        }
 
-.request-plugin p {
-    text-align: center;
-    margin-bottom: 20px;
-}
+        .request-plugin p {
+            text-align: center;
+            margin-bottom: 20px;
+        }
 
-form label {
-    display: block;
-    margin-top: 10px;
-    font-weight: bold;
-}
+        form label {
+            display: block;
+            margin-top: 10px;
+            font-weight: bold;
+        }
 
-form input,
-form select,
-form textarea {
-    width: 100%;
-    padding: 10px;
-    margin-top: 5px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
+        form input,
+        form select,
+        form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
 
-form textarea {
-    height: 100px;
-    resize: vertical;
-}
+        form textarea {
+            height: 100px;
+            resize: vertical;
+        }
 
-.btn-request {
-    background: #ff9800;
-    color: white;
-    padding: 12px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    width: 100%;
-    margin-top: 15px;
-    transition: 0.3s;
-}
+        .btn-request {
+            background: #ff9800;
+            color: white;
+            padding: 12px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            width: 100%;
+            margin-top: 15px;
+            transition: 0.3s;
+        }
 
-.btn-request:hover {
-    background: #e68900;
-}
+        .btn-request:hover {
+            background: #e68900;
+        }
 
-/* Footer */
-footer {
-    background: #222;
-    color: white;
-    text-align: center;
-    padding: 15px 0;
-    margin-top: 30px;
-}
+        footer {
+            background: #222;
+            color: white;
+            text-align: center;
+            padding: 15px 0;
+            margin-top: 30px;
+        }
 
-/* Responsive */
-@media (max-width: 768px) {
-    .navbar .container {
-        flex-direction: column;
-    }
+        @media (max-width: 768px) {
+            .navbar .container {
+                flex-direction: column;
+            }
 
-    .navbar-nav {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-        text-align: center;
-        background: #222;
-    }
+            .navbar-nav {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                text-align: center;
+                background: #222;
+            }
 
-    .navbar-nav.active {
-        display: flex;
-    }
+            .navbar-nav.active {
+                display: flex;
+            }
 
-    .navbar-nav li {
-        margin: 10px 0;
-    }
+            .navbar-nav li {
+                margin: 10px 0;
+            }
 
-    .navbar-toggle {
-        display: block;
-    }
-}
+            .navbar-toggle {
+                display: block;
+            }
+        }
     </style>
 </head>
 <body>
 
-    <!-- Navbar -->
-    <nav class="navbar">
-        <div class="container">
-            <a href="https://vsrstudio.pages.dev/index.html" class="navbar-brand">VsrStudio</a>
-            <button class="navbar-toggle" onclick="toggleNavbar()">☰</button>
-            <ul class="navbar-nav">
-                <li><a href="index.html" class="nav-link">Home</a></li>
-                <li><a href="pocketmine.html" class="nav-link">Plugin PocketMine</a></li>
-                <li><a href="papermc.html" class="nav-link">Plugin PaperMC</a></li>
-                <li><a href="backup.html" class="nav-link">Backup</a></li>
-                <li><a href="request-plugin.html" class="nav-link active">Request Plugin</a></li>
-            </ul>
-        </div>
-    </nav>
+<nav class="navbar">
+    <div class="container">
+        <a href="https://vsrstudio.pages.dev/index.html" class="navbar-brand">VsrStudio</a>
+        <button class="navbar-toggle" onclick="toggleNavbar()">☰</button>
+        <ul class="navbar-nav">
+            <li><a href="index.html" class="nav-link">Home</a></li>
+            <li><a href="pocketmine.html" class="nav-link">Plugin PocketMine</a></li>
+            <li><a href="papermc.html" class="nav-link">Plugin PaperMC</a></li>
+            <li><a href="backup.html" class="nav-link">Backup</a></li>
+            <li><a href="request-plugin.html" class="nav-link active">Request Plugin</a></li>
+        </ul>
+    </div>
+</nav>
 
-    <!-- Form Request Plugin -->
-    <section id="request-plugin" class="request-plugin">
-        <div class="container">
-            <h2>Request Plugin Custom</h2>
-            <p>Isi formulir di bawah untuk memesan plugin custom PocketMine dengan fitur sesuai kebutuhan Anda.</p>
+<section id="request-plugin" class="request-plugin">
+    <div class="container">
+        <h2>Request Plugin Custom</h2>
+        <p>Isi formulir di bawah untuk memesan plugin custom dengan fitur sesuai kebutuhan Anda.</p>
 
-            <form id="pluginForm">
-                <label for="pluginName">Nama Plugin:</label>
-                <input type="text" id="pluginName" name="pluginName" placeholder="Contoh: WingVenity, EggWars, Citizen" required>
+        <form id="pluginForm">
+            <label for="platform">Platform:</label>
+            <select id="platform" name="platform" required>
+                <option value="PocketMine">PocketMine</option>
+                <option value="PaperMC">PaperMC</option>
+            </select>
 
-                <label for="apiVersion">API PocketMine:</label>
-                <select id="apiVersion" name="apiVersion" required>
-                    <option value="API 5">API 5 (Terbaru)</option>
-                    <option value="API 4">API 4</option>
-                    <option value="API 3">API 3</option>
-                </select>
+            <label for="pluginName">Nama Plugin:</label>
+            <input type="text" id="pluginName" name="pluginName" placeholder="Contoh: WingVenity, EggWars, Citizen" required>
 
-                <label for="pluginType">Jenis Plugin:</label>
-                <select id="pluginType" name="pluginType" onchange="updatePrice()" required>
-                    <option value="Minigame">Minigame</option>
-                    <option value="Ekonomi">Ekonomi</option>
-                    <option value="Cosmetic">Cosmetic</option>
-                    <option value="UI/GUI">UI/GUI</option>
-                    <option value="Utility">Utility</option>
-                    <option value="Lainnya">Lainnya</option>
-                </select>
+            <label for="apiVersion">Versi API:</label>
+            <select id="apiVersion" name="apiVersion" required>
+                <option value="API 5">API 5 (Terbaru)</option>
+                <option value="API 4">API 4</option>
+                <option value="API 3">API 3</option>
+                <option value="Paper 1.20.4">Paper 1.20.4</option>
+                <option value="Paper 1.19">Paper 1.19</option>
+            </select>
 
-                <label for="pluginDesc">Deskripsi Plugin:</label>
-                <textarea id="pluginDesc" name="pluginDesc" placeholder="Jelaskan fitur dan fungsionalitas yang diinginkan" required></textarea>
+            <label for="pluginType">Jenis Plugin:</label>
+            <select id="pluginType" name="pluginType" onchange="updatePrice()" required>
+                <option value="Minigame">Minigame</option>
+                <option value="Ekonomi">Ekonomi</option>
+                <option value="Cosmetic">Cosmetic</option>
+                <option value="UI/GUI">UI/GUI</option>
+                <option value="Utility">Utility</option>
+                <option value="Lainnya">Lainnya</option>
+            </select>
 
-                <label for="additionalFeatures">Fitur Tambahan (Opsional):</label>
-                <input type="text" id="additionalFeatures" name="additionalFeatures" placeholder="Misalnya: ScoreHud, EconomyAPI, CameraAPI">
+            <label for="pluginDesc">Deskripsi Plugin:</label>
+            <textarea id="pluginDesc" name="pluginDesc" placeholder="Jelaskan fitur dan fungsionalitas yang diinginkan" required></textarea>
 
-                <p><strong>Estimasi Harga:</strong> <span id="priceEstimate">Rp 5.000 - Rp 1.000.000</span></p>
+            <label for="additionalFeatures">Fitur Tambahan (Opsional):</label>
+            <input type="text" id="additionalFeatures" name="additionalFeatures" placeholder="Misalnya: ScoreHud, Vault, CameraAPI">
 
-                <button type="button" class="btn-request" onclick="sendToWhatsApp()">Kirim via WhatsApp</button>
-            </form>
-        </div>
-    </section>
+            <p><strong>Estimasi Harga:</strong> <span id="priceEstimate">Rp 5.000 - Rp 1.000.000</span></p>
 
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <p>&copy; 2024 VsrStudio. All Rights Reserved.</p>
-        </div>
-    </footer>
+            <button type="button" class="btn-request" onclick="sendToWhatsApp()">Kirim via WhatsApp</button>
+        </form>
+    </div>
+</section>
 
-    <script>
-        function toggleNavbar() {
-            const nav = document.querySelector('.navbar-nav');
-            nav.classList.toggle('active');
-        }
+<footer>
+    <div class="container">
+        <p>&copy; 2024 VsrStudio. All Rights Reserved.</p>
+    </div>
+</footer>
 
-        function updatePrice() {
-            let pluginType = document.getElementById("pluginType").value;
-            let priceRange = "";
+<!-- ... semua bagian head tetap sama ... -->
+<script>
+    function toggleNavbar() {
+        const nav = document.querySelector('.navbar-nav');
+        nav.classList.toggle('active');
+    }
 
-            switch (pluginType) {
-                case "Minigame":
-                    priceRange = "Rp 30.000 - Rp 1.000.000";
-                    break;
-                case "Ekonomi":
-                    priceRange = "Rp 10.000 - Rp 300.000";
-                    break;
-                case "Cosmetic":
-                    priceRange = "Rp 10.000 - Rp 500.000";
-                    break;
-                case "UI/GUI":
-                    priceRange = "Rp 5.000 - Rp 100.000";
-                    break;
-                case "Utility":
-                    priceRange = "Rp 10.000 - Rp 500.000";
-                    break;
-                case "Lainnya":
-                    priceRange = "Rp 5.000 - Rp 1.000.000";
-                    break;
-                default:
-                    priceRange = "Rp 5.000 - Rp 1.000.000";
+    function updatePrice() {
+        const platform = document.getElementById("platform").value;
+        const pluginType = document.getElementById("pluginType").value;
+        let priceRange = "";
+
+        const priceData = {
+            PocketMine: {
+                Minigame: "Rp 30.000 - Rp 1.000.000",
+                Ekonomi: "Rp 10.000 - Rp 300.000",
+                Cosmetic: "Rp 10.000 - Rp 500.000",
+                "UI/GUI": "Rp 5.000 - Rp 100.000",
+                Utility: "Rp 10.000 - Rp 500.000",
+                Lainnya: "Rp 5.000 - Rp 1.000.000"
+            },
+            PaperMC: {
+                Minigame: "Rp 50.000 - Rp 2.000.000",
+                Ekonomi: "Rp 20.000 - Rp 500.000",
+                Cosmetic: "Rp 30.000 - Rp 600.000",
+                "UI/GUI": "Rp 10.000 - Rp 200.000",
+                Utility: "Rp 20.000 - Rp 800.000",
+                Lainnya: "Rp 10.000 - Rp 2.000.000"
             }
+        };
 
-            document.getElementById("priceEstimate").innerText = priceRange;
+        priceRange = priceData[platform][pluginType] || "Rp 5.000 - Rp 1.000.000";
+        document.getElementById("priceEstimate").innerText = priceRange;
+    }
+
+    // Trigger updatePrice saat platform berubah
+    document.addEventListener("DOMContentLoaded", function () {
+        document.getElementById("platform").addEventListener("change", updatePrice);
+        document.getElementById("pluginType").addEventListener("change", updatePrice);
+    });
+
+    function sendToWhatsApp() {
+        let platform = document.getElementById("platform").value;
+        let pluginName = document.getElementById("pluginName").value;
+        let apiVersion = document.getElementById("apiVersion").value;
+        let pluginType = document.getElementById("pluginType").value;
+        let pluginDesc = document.getElementById("pluginDesc").value;
+        let additionalFeatures = document.getElementById("additionalFeatures").value;
+        let priceEstimate = document.getElementById("priceEstimate").innerText;
+
+        if (pluginName === "" || pluginDesc === "") {
+            alert("Harap isi semua kolom yang diperlukan!");
+            return;
         }
 
-        function sendToWhatsApp() {
-            let pluginName = document.getElementById("pluginName").value;
-            let apiVersion = document.getElementById("apiVersion").value;
-            let pluginType = document.getElementById("pluginType").value;
-            let pluginDesc = document.getElementById("pluginDesc").value;
-            let additionalFeatures = document.getElementById("additionalFeatures").value;
-            let priceEstimate = document.getElementById("priceEstimate").innerText;
+        let message = `Halo, saya ingin request plugin custom.\n\n` +
+                      `Platform: ${platform}\n` +
+                      `Nama Plugin: ${pluginName}\n` +
+                      `Versi API: ${apiVersion}\n` +
+                      `Jenis Plugin: ${pluginType}\n` +
+                      `Deskripsi: ${pluginDesc}\n` +
+                      `Fitur Tambahan: ${additionalFeatures ? additionalFeatures : "-"}\n` +
+                      `Estimasi Harga: ${priceEstimate}\n\n` +
+                      `Terima kasih!`;
 
-            if (pluginName === "" || pluginDesc === "") {
-                alert("Harap isi semua kolom yang diperlukan!");
-                return;
-            }
-
-            let message = `Halo, saya ingin request plugin custom.\n\n` +
-                          `Nama Plugin: ${pluginName}\n` +
-                          `API PocketMine: ${apiVersion}\n` +
-                          `Jenis Plugin: ${pluginType}\n` +
-                          `Deskripsi: ${pluginDesc}\n` +
-                          `Fitur Tambahan: ${additionalFeatures ? additionalFeatures : "-"}\n` +
-                          `Estimasi Harga: ${priceEstimate}\n\n` +
-                          `Terima kasih!`;
-
-            let waLink = `https://wa.me/6285711051518?text=${encodeURIComponent(message)}`;
-            window.open(waLink, "_blank");
-        }
-    </script>
+        let waLink = `https://wa.me/6285711051518?text=${encodeURIComponent(message)}`;
+        window.open(waLink, "_blank");
+    }
+</script>
 
 </body>
 </html>
