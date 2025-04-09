@@ -64,15 +64,15 @@
       </div>
 
       <div class="slider-container">
-        <button class="slider-btn left" onclick="prevSlide()">‹</button>
-        <div class="slider-track" id="sliderTrack">
-          <img src="https://i.imgur.com/BEOUppc.png" alt="Testimoni 1">
-          <img src="https://i.imgur.com/5WjNzYO.png" alt="Testimoni 2">
-          <img src="https://i.imgur.com/qavpxbn.png" alt="Testimoni 3">
-          <img src="https://i.imgur.com/Z1jXUu7.png" alt="Testimoni 4">
-        </div>
-        <button class="slider-btn right" onclick="nextSlide()">›</button>
-      </div>
+  <button class="slider-btn left" onclick="prevSlide()">‹</button>
+  <div class="slider-track" id="sliderTrack">
+    <img src="https://i.imgur.com/BEOUppc.png" alt="Testimoni 1" />
+    <img src="https://i.imgur.com/5WjNzYO.png" alt="Testimoni 2" />
+    <img src="https://i.imgur.com/qavpxbn.png" alt="Testimoni 3" />
+    <img src="https://i.imgur.com/Z1jXUu7.png" alt="Testimoni 4" />
+  </div>
+  <button class="slider-btn right" onclick="nextSlide()">›</button>
+</div>
 
       <a href="https://wa.me/6285711051518" class="btn">Kirim Testimoni</a>
     </div>
@@ -88,6 +88,8 @@
     const track = document.getElementById('sliderTrack');
     const slides = track.children;
     let index = 0;
+    window.addEventListener("resize", () => showSlide(index));
+window.addEventListener("load", () => showSlide(index));
 
     function showSlide(i) {
       const slideWidth = slides[0].clientWidth;
