@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kirim Testimoni - VsrStudio</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+  <header class="hero-section">
+    <div class="container">
+      <h1>Kirim Testimoni</h1>
+      <p>Bagikan pengalamanmu menggunakan layanan plugin dari VsrStudio.</p>
+    </div>
+  </header>
+
+  <section class="testimoni">
+    <div class="container">
+      <h2 class="section-title">Form Testimoni</h2>
+      <form action="proses-testimoni.php" method="POST" class="testi-form" enctype="multipart/form-data">
+        <label for="nama">Nama Lengkap</label>
+        <input type="text" id="nama" name="nama" required />
+
+        <label for="rating">Rating</label>
+        <select id="rating" name="rating" required>
+          <option value="5">★★★★★ (5)</option>
+          <option value="4">★★★★☆ (4)</option>
+          <option value="3">★★★☆☆ (3)</option>
+          <option value="2">★★☆☆☆ (2)</option>
+          <option value="1">★☆☆☆☆ (1)</option>
+        </select>
+
+        <label for="pesan">Pesan Testimoni</label>
+        <textarea id="pesan" name="pesan" rows="5" required></textarea>
+
+        <label for="foto">Upload Foto (Opsional)</label>
+        <input type="file" id="foto" name="foto" accept="image/*" />
+
+        <button type="submit" class="btn">Kirim Sekarang</button>
+      </form>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <p>© 2025 VsrStudio. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
