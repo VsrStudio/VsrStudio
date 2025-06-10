@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Hosting Minecraft</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-900 text-white">
+
+  <!-- Navbar -->
+  <nav class="bg-gray-800 px-6 py-4 flex justify-between items-center">
+    <div class="text-2xl font-bold">XONEFG.XYZ</div>
+    <div class="space-x-4">
+      <a href="https://panel-ocean.server-hosting.biz.id" class="hover:underline text-gray-300">Login Panel</a>
+      <a href="softwarewiki.php" class="hover:underline text-gray-300">Software Wiki</a>
+    </div>
+  </nav>
+
+  <!-- Marquee -->
+  <div class="bg-yellow-400 text-black py-2 text-center font-semibold">
+    <marquee>Pembelian di atas Rp15.000 mendapatkan Subdomain Gratis!</marquee>
+  </div>
+
+  <!-- Form -->
+  <main class="p-6 max-w-3xl mx-auto space-y-6">
+    <form id="hostingForm" class="bg-gray-800 p-6 rounded-xl shadow-lg space-y-6">
+
+      <!-- Akun Panel -->
+      <div>
+        <label class="block font-semibold mb-2">Sudah punya akun Pterodactyl?</label>
+        <div class="flex gap-6 mb-2">
+          <label><input type="radio" name="pteroAccount" value="yes" checked> Ya</label>
+          <label><input type="radio" name="pteroAccount" value="no"> Belum</label>
+        </div>
+
+        <div id="pteroYesSection">
+          <label class="block mb-1 font-semibold">Username Panel:</label>
+          <input type="text" id="pteroUsername" class="w-full p-2 rounded bg-gray-700 text-white border border-gray-600" required>
+        </div>
+
+        <div id="pteroNoSection" class="hidden">
+          <label class="block mb-1 font-semibold">Email / Username Baru:</label>
+          <input type="text" id="newPteroEmail" class="w-full p-2 rounded bg-gray-700 text-white border border-gray-600">
+          <label class="block mt-2 mb-1 font-semibold">Password Baru:</label>
+          <input type="password" id="newPteroPassword" class="w-full p-2 rounded bg-gray-700 text-white border border-gray-600">
+        </div>
+      </div>
+
+      <!-- Edisi -->
+      <div>
+        <label class="block mb-2 font-semibold">Edisi Minecraft:</label>
+        <div class="flex gap-6">
+          <label><input type="radio" name="edition" value="Java" checked> Java Edition</label>
+          <label><input type="radio" name="edition" value="Bedrock"> Bedrock Edition</label>
+        </div>
+      </div>
+
+      <!-- Proxy -->
+      <div>
+        <label class="block font-semibold">Menggunakan Proxy Minecraft?</label>
+        <select id="proxyType" class="w-full p-2 rounded bg-gray-700 text-white border border-gray-600">
+          <option value="Tidak">Tidak Menggunakan</option>
+          <option value="Ya">Menggunakan Proxy</option>
+        </select>
+      </div>
+
+      <!-- Paket Proxy -->
+      <div id="proxySection" class="hidden">
+        <label class="block font-semibold mt-4">Paket Proxy:</label>
+        <select id="proxyPackage" class="w-full p-2 rounded bg-gray-700 text-white border border-gray-600">
+          <option>Bungee - 1 Core | 1GB RAM | 5GB DISK - Rp5.000</option>
+          <option>Velocity - 1 Core | 1GB RAM | 5GB DISK - Rp5.000</option>
+          <option>WaterdogPE - 1 Core | 1GB RAM | 5GB DISK - Rp5.000</option>
+          <option>GeyserMC - 1 Core | 1GB RAM | 5GB DISK - Rp5.000</option>
+        </select>
+
+        <label class="block font-semibold mt-4">Software Proxy:</label>
+        <select id="proxySoftware" class="w-full p-2 rounded bg-gray-700 text-white border border-gray-600">
+          <option>BungeeCord</option>
+          <option>Velocity</option>
+          <option>WaterdogPE</option>
+          <option>GeyserMC</option>
+        </select>
+      </div>
+
+      <!-- Paket Java -->
+      <div id="javaPackages">
+        <label class="block font-semibold">Paket Hosting Java:</label>
+        <select id="javaPackage" class="w-full p-2 rounded bg-gray-700 text-white border border-gray-600">
+          <option value="5">Basic - 1GB RAM | 1 Core | 5GB Disk - Rp5.000</option>
+          <option value="10">Medium - 2GB RAM | 2 Core | 10GB Disk - Rp10.000</option>
+          <option value="15">Pro - 3GB RAM | 3 Core | 15GB Disk - Rp15.000</option>
+          <option value="20">Ultimate - 4GB RAM | 4 Core | 20GB Disk - Rp20.000</option>
+        </select>
+
+        <label class="block font-semibold mt-4">Software Java:</label>
+        <select id="javaSoftware" class="w-full p-2 rounded bg-gray-700 text-white border border-gray-600">
+          <option>Paper</option>
+          <option>Spigot</option>
+          <option>Forge</option>
+          <option>Purpur</option>
+          <option>Fabric</option>
+          <option>Modrinth</option>
+          <option>GlowStone</option>
+          <option>CurseForge</option>
+          <option>Magma</option>
+          <option>VanillaCord</option>
+        </select>
+      </div>
+
+      <!-- Paket Bedrock -->
+      <div id="bedrockPackages" class="hidden">
+        <label class="block font-semibold">Paket Hosting Bedrock:</label>
+        <select id="bedrockPackage" class="w-full p-2 rounded bg-gray-700 text-white border border-gray-600">
+          <option value="3">Lite - 1GB RAM | 1 Core | 5GB Disk - Rp3.000</option>
+          <option value="6">Basic - 2GB RAM | 1,5 Core | 10GB Disk - Rp6.000</option>
+          <option value="9">Elite - 3GB RAM | 2 Core | 15GB Disk - Rp9.000</option>
+          <option value="13">Medium - 4GB RAM | 2,5 Core | 20GB Disk - Rp13.000</option>
+          <option value="15">Pro - 5GB RAM | 3 Core | 25GB Disk - Rp15.000</option>
+          <option value="18">Gamer - 6GB RAM | 4 Core | 30GB Disk - Rp18.000</option>
+        </select>
+
+        <label class="block font-semibold mt-4">Software Bedrock:</label>
+        <select id="bedrockSoftware" class="w-full p-2 rounded bg-gray-700 text-white border border-gray-600">
+          <option>PocketMine-MP</option>
+          <option>PocketMine-MP(Recode)</option>
+          <option>Nukkit</option>
+          <option>VanillaBedrock</option>
+          <option>GoMint</option>
+          <option>LiteLoaderBDS</option>
+          <option>DragonFly</option>
+          <option>PowerNukkitX</option>
+        </select>
+      </div>
+
+      <!-- Pembayaran -->
+      <div>
+        <label class="block font-semibold">Metode Pembayaran:</label>
+        <select id="paymentMethod" class="w-full p-2 rounded bg-gray-700 text-white border border-gray-600">
+          <option>Dana</option>
+          <option>ShopePay</option>
+          <option>Gopay</option>
+          <option>QRIS</option>
+        </select>
+      </div>
+
+      <!-- Subdomain -->
+      <div id="subdomainSection" class="hidden">
+        <label class="block font-semibold">Buat Subdomain Gratis:</label>
+        <div class="flex items-center space-x-2">
+          <input type="text" id="subdomainName" placeholder="namakamu" class="w-1/2 p-2 rounded bg-gray-700 text-white border border-gray-600" />
+          <select id="subdomainTLD" class="p-2 rounded bg-gray-700 text-white border border-gray-600">
+            <option value=".minecraft.id.lv">.minecraft.id.lv</option>
+            <option value=".minecraft.pe">.minecraft.pe</option>
+            <option value=".minecraftr.us">.minecraftr.us</option>
+            <option value=".minecraftnoob.com">.minecraftnoob.com</option>
+            <option value=".happyminecraft.org">.happyminecraft.org</option>
+            <option value=".gamefan.la">.gamefan.la</option>
+            <option value=".gamers-online.net">.gamers-online.net</option>
+          </select>
+        </div>
+      </div>
+
+      <button type="submit" class="w-full bg-green-500 hover:bg-green-600 p-2 rounded font-bold">
+        Pesan Sekarang
+      </button>
+    </form>
+  </main>
+
+  <script>
+    const editionRadios = document.querySelectorAll('input[name="edition"]');
+    const javaPackages = document.getElementById('javaPackages');
+    const bedrockPackages = document.getElementById('bedrockPackages');
+    const javaPackage = document.getElementById('javaPackage');
+    const bedrockPackage = document.getElementById('bedrockPackage');
+    const subdomainSection = document.getElementById('subdomainSection');
+    const pteroRadios = document.querySelectorAll('input[name="pteroAccount"]');
+    const pteroYes = document.getElementById('pteroYesSection');
+    const pteroNo = document.getElementById('pteroNoSection');
+    const proxyType = document.getElementById('proxyType');
+    const proxySection = document.getElementById('proxySection');
+
+    function updateEdition() {
+      const edition = document.querySelector('input[name="edition"]:checked').value;
+      javaPackages.classList.toggle('hidden', edition !== 'Java');
+      bedrockPackages.classList.toggle('hidden', edition !== 'Bedrock');
+      checkPriceForSubdomain();
+    }
+
+    function updatePteroSection() {
+      const value = document.querySelector('input[name="pteroAccount"]:checked').value;
+      pteroYes.classList.toggle('hidden', value !== 'yes');
+      pteroNo.classList.toggle('hidden', value !== 'no');
+    }
+
+    function checkPriceForSubdomain() {
+      const edition = document.querySelector('input[name="edition"]:checked').value;
+      const price = edition === 'Java' ? parseInt(javaPackage.value) : parseInt(bedrockPackage.value);
+      subdomainSection.classList.toggle('hidden', price <= 14);
+    }
+
+    function updateProxySection() {
+      proxySection.classList.toggle('hidden', proxyType.value !== 'Ya');
+    }
+
+    editionRadios.forEach(e => e.addEventListener('change', updateEdition));
+    pteroRadios.forEach(r => r.addEventListener('change', updatePteroSection));
+    javaPackage.addEventListener('change', checkPriceForSubdomain);
+    bedrockPackage.addEventListener('change', checkPriceForSubdomain);
+    proxyType.addEventListener('change', updateProxySection);
+
+    // Form submit
+    document.getElementById('hostingForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+      const edition = document.querySelector('input[name="edition"]:checked').value;
+      const packageValue = edition === 'Java' ? javaPackage.value : bedrockPackage.value;
+      const software = edition === 'Java' ? document.getElementById('javaSoftware').value : document.getElementById('bedrockSoftware').value;
+      const proxyUsed = proxyType.value === 'Ya';
+      const proxyDetail = proxyUsed ? `\nPaket Proxy: ${document.getElementById('proxyPackage').value}\nSoftware Proxy: ${document.getElementById('proxySoftware').value}` : '';
+      const payment = document.getElementById('paymentMethod').value;
+
+      const message = encodeURIComponent(
+        `Halo Admin, saya ingin memesan hosting Minecraft:\n\nEdisi: ${edition}\nPaket: ${packageValue}\nSoftware: ${software}${proxyDetail}\nPembayaran: ${payment}`
+      );
+
+      window.open(`https://wa.me/6285711051518?text=${message}`, '_blank');
+    });
+  </script>
+</body>
+</html>
