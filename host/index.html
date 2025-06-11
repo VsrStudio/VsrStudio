@@ -67,13 +67,6 @@
 
       <!-- Paket Proxy -->
       <div id="proxySection" class="hidden">
-        <label class="block font-semibold mt-4">Paket Proxy:</label>
-        <select id="proxyPackage" class="w-full p-2 rounded bg-gray-700 text-white border border-gray-600">
-          <option>Bungee - 1 Core | 1GB RAM | 5GB DISK - Rp5.000</option>
-          <option>Velocity - 1 Core | 1GB RAM | 5GB DISK - Rp5.000</option>
-          <option>WaterdogPE - 1 Core | 1GB RAM | 5GB DISK - Rp5.000</option>
-          <option>GeyserMC - 1 Core | 1GB RAM | 5GB DISK - Rp5.000</option>
-        </select>
 
         <label class="block font-semibold mt-4">Software Proxy:</label>
         <select id="proxySoftware" class="w-full p-2 rounded bg-gray-700 text-white border border-gray-600">
@@ -81,6 +74,14 @@
           <option>Velocity</option>
           <option>WaterdogPE</option>
           <option>GeyserMC</option>
+        </select>
+
+        <label class="block font-semibold mt-4">Paket Proxy:</label>
+        <select id="proxyPackage" class="w-full p-2 rounded bg-gray-700 text-white border border-gray-600">
+          <option>Lite - 1 Core | 1GB RAM | 5GB DISK - Rp5.000</option>
+          <option>Elite - 1 Core | 1GB RAM | 5GB DISK - Rp5.000</option>
+          <option>Medium - 1 Core | 1GB RAM | 5GB DISK - Rp5.000</option>
+          <option>Hard - 1 Core | 1GB RAM | 5GB DISK - Rp5.000</option>
         </select>
       </div>
 
@@ -131,6 +132,7 @@
           <option>LiteLoaderBDS</option>
           <option>DragonFly</option>
           <option>PowerNukkitX</option>
+          <option>Levilamina</option>
         </select>
       </div>
 
@@ -272,7 +274,7 @@
       }
 
       pesan += `Metode Pembayaran: ${paymentMethod}\n`;
-      if ((edition === "Java" && javaPackage.includes("Rp15.000")) || (edition === "Bedrock" && bedrockPackage.includes("Rp15.000"))) {
+      if ((edition === "Java" && javaPackage.includes("15")) || (edition === "Bedrock" && bedrockPackage.includes("15"))) {
         pesan += `Subdomain Gratis: ${fullSubdomain}\n`;
       }
 
