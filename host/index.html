@@ -189,7 +189,11 @@
         if (radio.value === "Java") {
           javaPackages.classList.remove("hidden");
           bedrockPackages.classList.add("hidden");
+          javaPackage.addEventListener('change', checkPriceForSubdomain);    
+          bedrockPackage.addEventListener('change', checkPriceForSubdomain);    
         } else {
+          javaPackage.addEventListener('change', checkPriceForSubdomain);    
+          bedrockPackage.addEventListener('change', checkPriceForSubdomain);    
           javaPackages.classList.add("hidden");
           bedrockPackages.classList.remove("hidden");
         }
@@ -276,6 +280,13 @@
       pesan += `Metode Pembayaran: ${paymentMethod}\n`;
       if ((edition === "Java" && javaPackage.includes("Rp15.000")) || (edition === "Bedrock" && bedrockPackage.includes("Rp15.000"))) {
         pesan += `Subdomain Gratis: ${fullSubdomain}\n`;
+      }
+      
+      function updateEdition() {    
+      const edition = document.querySelector('input[name="edition"]:checked').value;    
+      javaPackages.classList.toggle('hidden', edition !== 'Java');    
+      bedrockPackages.classList.toggle('hidden', edition !== 'Bedrock');    
+      checkPriceForSubdomain();    
       }
 
       function checkPriceForSubdomain() {    
