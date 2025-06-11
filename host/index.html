@@ -10,7 +10,7 @@
 
   <!-- Navbar -->
   <nav class="bg-gray-800 px-6 py-4 flex justify-between items-center">
-    <div class="text-2xl font-bold">XONEFG.XYZ</div>
+    <div class="text-2xl font-bold">CUBEOCEAN</div>
     <div class="space-x-4">
       <a href="https://panel-ocean.server-hosting.biz.id" class="hover:underline text-gray-300">Login Panel</a>
       <a href="https://vsrstudio.web.id/host/softwarewiki" class="hover:underline text-gray-300">Software Wiki</a>
@@ -162,7 +162,8 @@
         </div>
       </div>
 
-      <button type="submit" class="w-full bg-green-500 hover:bg-green-600 p-2 rounded font-bold">
+      <!-- Tombol -->
+      <button type="submit" class="w-full bg-green-500 hover:bg-green-600 text-white font-bold py-2 rounded">
         Pesan Sekarang
       </button>
     </form>
@@ -170,61 +171,109 @@
 
   <script>
     const editionRadios = document.querySelectorAll('input[name="edition"]');
-    const javaPackages = document.getElementById('javaPackages');
-    const bedrockPackages = document.getElementById('bedrockPackages');
-    const javaPackage = document.getElementById('javaPackage');
-    const bedrockPackage = document.getElementById('bedrockPackage');
-    const subdomainSection = document.getElementById('subdomainSection');
+    const proxySelect = document.getElementById("proxyType");
     const pteroRadios = document.querySelectorAll('input[name="pteroAccount"]');
-    const pteroYes = document.getElementById('pteroYesSection');
-    const pteroNo = document.getElementById('pteroNoSection');
-    const proxyType = document.getElementById('proxyType');
-    const proxySection = document.getElementById('proxySection');
+    const javaPackages = document.getElementById("javaPackages");
+    const bedrockPackages = document.getElementById("bedrockPackages");
+    const proxySection = document.getElementById("proxySection");
+    const subdomainSection = document.getElementById("subdomainSection");
 
-    function updateEdition() {
-      const edition = document.querySelector('input[name="edition"]:checked').value;
-      javaPackages.classList.toggle('hidden', edition !== 'Java');
-      bedrockPackages.classList.toggle('hidden', edition !== 'Bedrock');
-      checkPriceForSubdomain();
-    }
+    const pteroYesSection = document.getElementById("pteroYesSection");
+    const pteroNoSection = document.getElementById("pteroNoSection");
 
-    function updatePteroSection() {
-      const value = document.querySelector('input[name="pteroAccount"]:checked').value;
-      pteroYes.classList.toggle('hidden', value !== 'yes');
-      pteroNo.classList.toggle('hidden', value !== 'no');
-    }
+    // Ganti tampilan Java/Bedrock
+    editionRadios.forEach(radio => {
+      radio.addEventListener("change", () => {
+        if (radio.value === "Java") {
+          javaPackages.classList.remove("hidden");
+          bedrockPackages.classList.add("hidden");
+        } else {
+          javaPackages.classList.add("hidden");
+          bedrockPackages.classList.remove("hidden");
+        }
+      });
+    });
 
-    function checkPriceForSubdomain() {
-      const edition = document.querySelector('input[name="edition"]:checked').value;
-      const price = edition === 'Java' ? parseInt(javaPackage.value) : parseInt(bedrockPackage.value);
-      subdomainSection.classList.toggle('hidden', price <= 14);
-    }
+    // Proxy toggle
+    proxySelect.addEventListener("change", () => {
+      proxySection.classList.toggle("hidden", proxySelect.value === "Tidak");
+    });
 
-    function updateProxySection() {
-      proxySection.classList.toggle('hidden', proxyType.value !== 'Ya');
-    }
+    // Panel toggle
+    pteroRadios.forEach(radio => {
+      radio.addEventListener("change", () => {
+        const isYes = radio.value === "yes";
+        pteroYesSection.classList.toggle("hidden", !isYes);
+        pteroNoSection.classList.toggle("hidden", isYes);
+      });
+    });
 
-    editionRadios.forEach(e => e.addEventListener('change', updateEdition));
-    pteroRadios.forEach(r => r.addEventListener('change', updatePteroSection));
-    javaPackage.addEventListener('change', checkPriceForSubdomain);
-    bedrockPackage.addEventListener('change', checkPriceForSubdomain);
-    proxyType.addEventListener('change', updateProxySection);
+    // Toggle subdomain otomatis
+    const allPackages = [
+      ...document.querySelectorAll("#javaPackage option"),
+      ...document.querySelectorAll("#bedrockPackage option")
+    ];
 
-    // Form submit
-    document.getElementById('hostingForm').addEventListener('submit', function (e) {
+    const hostingForm = document.getElementById("hostingForm");
+    hostingForm.addEventListener("submit", function (e) {
       e.preventDefault();
+
       const edition = document.querySelector('input[name="edition"]:checked').value;
-      const packageValue = edition === 'Java' ? javaPackage.value : bedrockPackage.value;
-      const software = edition === 'Java' ? document.getElementById('javaSoftware').value : document.getElementById('bedrockSoftware').value;
-      const proxyUsed = proxyType.value === 'Ya';
-      const proxyDetail = proxyUsed ? `\nPaket Proxy: ${document.getElementById('proxyPackage').value}\nSoftware Proxy: ${document.getElementById('proxySoftware').value}` : '';
-      const payment = document.getElementById('paymentMethod').value;
+      const pteroAcc = document.querySelector('input[name="pteroAccount"]:checked').value;
+      const proxy = document.getElementById("proxyType").value;
+      const proxyPackage = document.getElementById("proxyPackage")?.value;
+      const proxySoftware = document.getElementById("proxySoftware")?.value;
 
-      const message = encodeURIComponent(
-        `Halo Admin, saya ingin memesan hosting Minecraft:\n\nEdisi: ${edition}\nPaket: ${packageValue}\nSoftware: ${software}${proxyDetail}\nPembayaran: ${payment}`
-      );
+      const javaPackage = document.getElementById("javaPackage")?.selectedOptions[0]?.text;
+      const javaSoftware = document.getElementById("javaSoftware")?.value;
 
-      window.open(`https://wa.me/6285711051518?text=${message}`, '_blank');
+      const bedrockPackage = document.getElementById("bedrockPackage")?.selectedOptions[0]?.text;
+      const bedrockSoftware = document.getElementById("bedrockSoftware")?.value;
+
+      const paymentMethod = document.getElementById("paymentMethod").value;
+
+      const pteroUsername = document.getElementById("pteroUsername")?.value;
+      const newPteroEmail = document.getElementById("newPteroEmail")?.value;
+      const newPteroPassword = document.getElementById("newPteroPassword")?.value;
+
+      const subdomainName = document.getElementById("subdomainName")?.value;
+      const subdomainTLD = document.getElementById("subdomainTLD")?.value;
+      const fullSubdomain = subdomainName ? `${subdomainName}${subdomainTLD}` : "Tidak Membuat";
+
+      let pesan = `*Formulir Hosting Minecraft:*\n`;
+      pesan += `Edisi: ${edition}\n`;
+      pesan += `Punya akun Panel: ${pteroAcc === "yes" ? "Ya" : "Belum"}\n`;
+
+      if (pteroAcc === "yes") {
+        pesan += `Username Panel: ${pteroUsername}\n`;
+      } else {
+        pesan += `Email Baru: ${newPteroEmail}\n`;
+        pesan += `Password Baru: ${newPteroPassword}\n`;
+      }
+
+      if (edition === "Java") {
+        pesan += `Paket Java: ${javaPackage}\n`;
+        pesan += `Software Java: ${javaSoftware}\n`;
+      } else {
+        pesan += `Paket Bedrock: ${bedrockPackage}\n`;
+        pesan += `Software Bedrock: ${bedrockSoftware}\n`;
+      }
+
+      pesan += `Menggunakan Proxy: ${proxy}\n`;
+      if (proxy === "Ya") {
+        pesan += `Paket Proxy: ${proxyPackage}\n`;
+        pesan += `Software Proxy: ${proxySoftware}\n`;
+      }
+
+      pesan += `Metode Pembayaran: ${paymentMethod}\n`;
+      if ((edition === "Java" && javaPackage.includes("Rp15.000")) || (edition === "Bedrock" && bedrockPackage.includes("Rp15.000"))) {
+        pesan += `Subdomain Gratis: ${fullSubdomain}\n`;
+      }
+
+      const encodedPesan = encodeURIComponent(pesan);
+      const nomorAdmin = "628123456789"; // Ganti dengan nomor WhatsApp tujuan
+      const link = `https://wa.me/${nomorAdmin}?text=${encodedPesan}`;
+      window.open(link, '_blank');
     });
   </script>
 </body>
