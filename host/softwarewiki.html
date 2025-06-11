@@ -7,9 +7,10 @@
   <style>
     body {
       font-family: 'Inter', sans-serif;
-      background-color: #eef1f4;
+      background-color: #f6f9fc;
       margin: 0;
       padding: 0;
+      color: #333;
     }
 
     .container {
@@ -29,7 +30,7 @@
     }
 
     p {
-      color: #555;
+      color: #666;
       text-align: center;
       margin-bottom: 40px;
     }
@@ -38,44 +39,59 @@
       display: block;
       margin: 0 auto 30px;
       max-width: 100%;
-      height: auto;
       border-radius: 12px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     }
 
     h2 {
-      font-size: 24px;
-      margin-bottom: 20px;
-      color: #333;
-      border-left: 4px solid #4A90E2;
+      font-size: 26px;
+      color: #2c3e50;
+      border-left: 5px solid #3498db;
       padding-left: 12px;
+      margin-top: 50px;
     }
 
     h3 {
       margin-top: 30px;
-      color: #444;
+      color: #34495e;
     }
 
     ul {
       padding-left: 20px;
       margin-top: 10px;
-      color: #555;
+      line-height: 1.7;
     }
 
     .badge {
-      background-color: #4A90E2;
+      background-color: #3498db;
       color: white;
-      padding: 3px 8px;
-      font-size: 12px;
-      border-radius: 8px;
+      padding: 4px 10px;
+      font-size: 11px;
+      border-radius: 10px;
       vertical-align: middle;
-      margin-left: 6px;
+      margin-left: 8px;
+    }
+
+    .badge.unofficial {
+      background-color: #f39c12;
+    }
+
+    a.repo-link {
+      display: inline-block;
+      margin-top: 6px;
+      font-size: 14px;
+      text-decoration: none;
+      color: #2980b9;
+    }
+
+    a.repo-link:hover {
+      text-decoration: underline;
     }
 
     footer {
       text-align: center;
-      color: #888;
-      margin-top: 50px;
+      color: #aaa;
+      margin-top: 60px;
       font-size: 14px;
     }
   </style>
@@ -96,37 +112,42 @@
       <li>Update langsung dari tim PMMP.</li>
       <li>Dukungan plugin modern berbasis API 5.</li>
     </ul>
+    <a class="repo-link" href="https://github.com/pmmp/PocketMine-MP" target="_blank">🔗 GitHub: PocketMine-MP 5</a>
 
-    <h3>🔹 PM4</h3>
+    <h3>🔹 PM4 <span class="badge">Official</span></h3>
     <ul>
       <li>Versi lama PocketMine-MP dengan API 4.</li>
       <li>Tidak lagi mendapatkan pembaruan resmi dari PMMP.</li>
       <li>Kompatibel dengan plugin-plugin lama.</li>
       <li>Stabil di Minecraft versi 1.19 ke bawah.</li>
     </ul>
+    <a class="repo-link" href="https://github.com/pmmp/PocketMine-MP/tree/stable" target="_blank">🔗 GitHub: PocketMine-MP 4</a>
 
-    <h3>🔹 PM4V2 <span class="badge" style="background-color:#f39c12;">Unofficial</span></h3>
+    <h3>🔹 PM4V2 <span class="badge unofficial">Unofficial</span></h3>
     <ul>
       <li>Modifikasi dari PM4 yang mendukung Minecraft 1.21.70.</li>
-      <li>Tidak dikembangkan oleh tim PMMP resmi.</li>
       <li>Diperbarui oleh komunitas atau pengembang pihak ketiga.</li>
+      <li>Tidak dikembangkan oleh tim PMMP resmi.</li>
     </ul>
+    <a class="repo-link" href="https://github.com/alvin0319/PocketMine-MP-Legacy" target="_blank">🔗 GitHub: PocketMine-MP-Legacy</a>
 
     <h2>⚒️ Fork PocketMine</h2>
 
-    <h3>🔹 NG (NetherGames)</h3>
+    <h3>🔹 NG (NetherGames) <span class="badge unofficial">Unofficial</span></h3>
     <ul>
       <li>Fork dari PocketMine yang dikembangkan oleh tim <strong>NetherGames</strong>.</li>
       <li>Mendukung <strong>MultiVersion</strong>, memungkinkan pemain dari berbagai versi Minecraft untuk bergabung.</li>
       <li>Stabil dan banyak digunakan untuk server berskala besar.</li>
     </ul>
+    <a class="repo-link" href="https://github.com/NetherGamesMC/PocketMine-MP" target="_blank">🔗 GitHub: PocketMine-MP</a>
 
-    <h3>🔹 BA (BetterAltay)</h3>
+    <h3>🔹 BA (BetterAltay) <span class="badge unofficial">Unofficial</span</h3>
     <ul>
       <li>Fork dari PocketMine-MP berbasis proyek <strong>Altay</strong>.</li>
       <li>Menambahkan fitur seperti full NBT support, BlockEntity, dan lainnya.</li>
       <li>Cocok untuk server dengan kebutuhan fitur lanjutan dan performa tinggi.</li>
     </ul>
+    <a class="repo-link" href="https://github.com/Benedikt05/BetterAltay" target="_blank">🔗 GitHub: BetterAltay</a>
 
     <footer>
       📌 Pilih versi PocketMine yang sesuai dengan versi Minecraft server Anda dan plugin yang ingin digunakan.
