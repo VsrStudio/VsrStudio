@@ -183,17 +183,16 @@
     const pteroYesSection = document.getElementById("pteroYesSection");
     const pteroNoSection = document.getElementById("pteroNoSection");
 
-    // Ganti tampilan Java/Bedrock
+    // Tambahkan event listener hanya sekali
+    javaPackage.addEventListener('change', checkPriceForSubdomain);
+    bedrockPackage.addEventListener('change', checkPriceForSubdomain);
+
     editionRadios.forEach(radio => {
       radio.addEventListener("change", () => {
         if (radio.value === "Java") {
           javaPackages.classList.remove("hidden");
           bedrockPackages.classList.add("hidden");
-          javaPackage.addEventListener('change', checkPriceForSubdomain);    
-          bedrockPackage.addEventListener('change', checkPriceForSubdomain);    
         } else {
-          javaPackage.addEventListener('change', checkPriceForSubdomain);    
-          bedrockPackage.addEventListener('change', checkPriceForSubdomain);    
           javaPackages.classList.add("hidden");
           bedrockPackages.classList.remove("hidden");
         }
