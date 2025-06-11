@@ -218,6 +218,12 @@
     hostingForm.addEventListener("submit", function (e) {
       e.preventDefault();
 
+      const numbers = [
+      "6281234567890", // Nomor 1
+      "6289876543210", // Nomor 2
+      ];
+      const randomNumber = numbers[Math.floor(Math.random() * numbers.length)];
+
       const edition = document.querySelector('input[name="edition"]:checked').value;
       const pteroAcc = document.querySelector('input[name="pteroAccount"]:checked').value;
       const proxy = document.getElementById("proxyType").value;
@@ -271,8 +277,7 @@
       }
 
       const encodedPesan = encodeURIComponent(pesan);
-      const nomorAdmin = "628123456789"; // Ganti dengan nomor WhatsApp tujuan
-      const link = `https://wa.me/${nomorAdmin}?text=${encodedPesan}`;
+      const link = `https://wa.me/${randomNumber}?text=${encodedPesan}`;
       window.open(link, '_blank');
     });
   </script>
