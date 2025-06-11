@@ -184,20 +184,23 @@
     const pteroNoSection = document.getElementById("pteroNoSection");
 
     // Tambahkan event listener hanya sekali
-    javaPackage.addEventListener('change', checkPriceForSubdomain);
-    bedrockPackage.addEventListener('change', checkPriceForSubdomain);
+    // Tambahkan listener hanya jika fungsi checkPriceForSubdomain ada
+if (typeof checkPriceForSubdomain === "function") {
+  javaPackage.addEventListener('change', checkPriceForSubdomain);
+  bedrockPackage.addEventListener('change', checkPriceForSubdomain);
+}
 
-    editionRadios.forEach(radio => {
-      radio.addEventListener("change", () => {
-        if (radio.value === "Java") {
-          javaPackages.classList.remove("hidden");
-          bedrockPackages.classList.add("hidden");
-        } else {
-          javaPackages.classList.add("hidden");
-          bedrockPackages.classList.remove("hidden");
-        }
-      });
-    });
+editionRadios.forEach(radio => {  
+  radio.addEventListener("change", () => {  
+    if (radio.value === "Java") {  
+      javaPackages.classList.remove("hidden");  
+      bedrockPackages.classList.add("hidden");  
+    } else {  
+      javaPackages.classList.add("hidden");  
+      bedrockPackages.classList.remove("hidden");  
+    }  
+  });  
+});
 
     // Proxy toggle
     proxySelect.addEventListener("change", () => {
