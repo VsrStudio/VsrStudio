@@ -183,24 +183,31 @@
     const pteroYesSection = document.getElementById("pteroYesSection");
     const pteroNoSection = document.getElementById("pteroNoSection");
 
-    // Tambahkan event listener hanya sekali
-    // Tambahkan listener hanya jika fungsi checkPriceForSubdomain ada
-if (typeof checkPriceForSubdomain === "function") {
+    function checkPriceForSubdomain() {
+    const edition = document.querySelector('input[name="edition"]:checked').value;
+    const selected = edition === "Java" ? javaPackage : bedrockPackage;
+    const price = parseInt(selected.value);
+
+    subdomainSection.classList.toggle('hidden', isNaN(price) || price < 14);
+  }
+
+  // Tambahkan listener untuk perubahan paket
   javaPackage.addEventListener('change', checkPriceForSubdomain);
   bedrockPackage.addEventListener('change', checkPriceForSubdomain);
-}
 
-editionRadios.forEach(radio => {  
-  radio.addEventListener("change", () => {  
-    if (radio.value === "Java") {  
-      javaPackages.classList.remove("hidden");  
-      bedrockPackages.classList.add("hidden");  
-    } else {  
-      javaPackages.classList.add("hidden");  
-      bedrockPackages.classList.remove("hidden");  
-    }  
-  });  
-});
+  // Toggle paket saat edisi berubah
+  editionRadios.forEach(radio => {
+    radio.addEventListener("change", () => {
+      if (radio.value === "Java") {
+        javaPackages.classList.remove("hidden");
+        bedrockPackages.classList.add("hidden");
+      } else {
+        javaPackages.classList.add("hidden");
+        bedrockPackages.classList.remove("hidden");
+      }
+      checkPriceForSubdomain(); // ← panggil saat edisi berubah
+    });
+  });
 
     // Proxy toggle
     proxySelect.addEventListener("change", () => {
@@ -282,19 +289,6 @@ editionRadios.forEach(radio => {
       pesan += `Metode Pembayaran: ${paymentMethod}\n`;
       if ((edition === "Java" && javaPackage.includes("Rp15.000")) || (edition === "Bedrock" && bedrockPackage.includes("Rp15.000"))) {
         pesan += `Subdomain Gratis: ${fullSubdomain}\n`;
-      }
-      
-      function updateEdition() {    
-      const edition = document.querySelector('input[name="edition"]:checked').value;    
-      javaPackages.classList.toggle('hidden', edition !== 'Java');    
-      bedrockPackages.classList.toggle('hidden', edition !== 'Bedrock');    
-      checkPriceForSubdomain();    
-      }
-
-      function checkPriceForSubdomain() {    
-      const edition = document.querySelector('input[name="edition"]:checked').value;    
-      const price = edition === 'Java' ? parseInt(javaPackage.value) : parseInt(bedrockPackage.value);    
-      subdomainSection.classList.toggle('hidden', price <= 14);    
       }
 
       const encodedPesan = encodeURIComponent(pesan);
