@@ -291,13 +291,6 @@
         pesan += `Subdomain Gratis: ${fullSubdomain}\n`;
       }
 
-      function updateEdition() {    Add commentMore actions
-      const edition = document.querySelector('input[name="edition"]:checked').value;    
-      javaPackages.classList.toggle('hidden', edition !== 'Java');    
-      bedrockPackages.classList.toggle('hidden', edition !== 'Bedrock');    
-      checkPriceForSubdomain();    
-      }
-
       const encodedPesan = encodeURIComponent(pesan);
       const link = `https://wa.me/${randomNumber}?text=${encodedPesan}`;
       window.open(link, '_blank');
