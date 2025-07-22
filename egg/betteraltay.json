@@ -1,0 +1,15 @@
+{
+    "php_version": "8.2",
+    "base_version": "1.32.0",
+    "build": 2549,
+    "is_dev": false,
+    "channel": "master",
+    "git_commit": "50e15db9ac280f4646f33fc05283190092c53e28",
+    "mcpe_version": "1.21.93",
+    "date": 1751978584,
+    "details_url": "https://github.com/Benedikt05/BetterAltay/releases/tag/1.32.0",
+    "download_url": "https://github.com/Benedikt05/BetterAltay/releases/download/1.32.0/BetterAltay.phar",
+    "source_url": "https://github.com/Benedikt05/BetterAltay/tree/dev/1.21.93",
+    "build_log_url": "https://github.com/pmmp/PocketMine-MP/actions/runs/16143528321",
+    "php_download_url": "https://github.com/Benedikt05/PHP-Binaries/releases/download/linux/bin.zip"
+}
