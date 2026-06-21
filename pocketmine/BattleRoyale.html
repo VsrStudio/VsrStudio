@@ -180,6 +180,33 @@ body{
 }
 
 /* =========================
+   VIDEO PREVIEW (NEW)
+========================= */
+.video-preview{
+    max-width:900px;
+    margin:30px auto;
+    padding:0 20px;
+}
+
+.video-box{
+    position:relative;
+    padding-bottom:56.25%;
+    height:0;
+    overflow:hidden;
+    border-radius:16px;
+    border:1px solid rgba(56,189,248,0.2);
+    box-shadow:0 0 30px rgba(56,189,248,0.15);
+}
+
+.video-box iframe{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+}
+
+/* =========================
    TAB SYSTEM (PERBAIKAN UTAMA)
 ========================= */
 .tabs{
@@ -387,13 +414,15 @@ footer{
 <!-- TAB CONTENT (GAMBAR TETAP DIPERTAHANKAN) -->
 
 <div id="lobby" class="tab-content active section">
-    <h3>LOBBY</h3>
-    <div class="gallery">
-        <img class="plugin-image" src="https://polymart-attachments.s3.amazonaws.com/723889ae-9790-4114-b8e7-7047963765c8/default/attachment.png">
-        <img class="plugin-image" src="https://polymart-attachments.s3.amazonaws.com/fd4fa1f4-e92c-4d8e-accb-71d70bc3ea52/default/attachment.png">
-        <img class="plugin-image" src="https://polymart-attachments.s3.amazonaws.com/40930a43-8da5-4523-826b-5b1bc539e3fd/default/attachment.png">
-        <img class="plugin-image" src="https://polymart-attachments.s3.amazonaws.com/0e36eb3f-f5b5-4010-bafa-7bc908b40f62/default/attachment.png">
-        <img class="plugin-image" src="https://polymart-attachments.s3.amazonaws.com/51bf738b-30b1-4a18-9036-8f166c87948b/default/attachment.png">
+    <h3>PREVIEW</h3>
+    <!-- VIDEO PREVIEW (YOUTUBE FIXED) -->
+<div class="video-preview">
+    <div class="video-box">
+        <iframe 
+            src="https://www.youtube.com/embed/4D4hPlUxAws?si=vvOMAKXaUzW_z04D"
+            frameborder="0"
+            allowfullscreen>
+        </iframe>
     </div>
 </div>
 
