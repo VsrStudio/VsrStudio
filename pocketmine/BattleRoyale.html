@@ -419,9 +419,9 @@ footer{
         <div class="video-box">
             <iframe 
                 src="https://www.youtube.com/embed/4D4hPlUxAws?si=vvOMAKXaUzW_z04D"
-                allowfullscreen
                 frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture">
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen>
             </iframe>
         </div>
     </div>
@@ -468,17 +468,16 @@ footer{
 </a>
 
 <script>
-function toggleNavbar(){
-    document.querySelector(".navbar-nav").classList.toggle("active");
-}
-
-function openTab(event, id){
-    document.querySelectorAll(".tab-content").forEach(el => el.classList.remove("active"));
-    document.querySelectorAll(".tab-btn").forEach(el => el.classList.remove("active"));
-
-    document.getElementById(id).classList.add("active");
-    event.currentTarget.classList.add("active");
-}
+   function toggleNavbar(){
+      document.querySelector(".navbar-nav").classList.toggle("active");
+   }
+   
+   function openTab(event, id){
+      document.querySelectorAll(".tab-content").forEach(el => el.classList.remove("active"));
+      document.querySelectorAll(".tab-btn").forEach(el => el.classList.remove("active"));
+      document.getElementById(id).classList.add("active");
+      event.currentTarget.classList.add("active");
+   }
 </script>
 
 </body>
